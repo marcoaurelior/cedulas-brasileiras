@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Cédulas</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header>
+  <h1>Jogo de Identificação de Cédulas</h1>
+</header>
+<main>
+  <div id="game-container">
+    <div id="info-text-small">Clique na cédula para alternar entre frente e verso.</div>
+    <img id="cedula-img" src="" alt="Imagem da cédula">
+    <div id="info-box" style="display: none;">
+      <p id="info-text"></p>
+    </div>
+    <div id="dica" class="dica"></div>
+    <input type="number" id="ano-input" placeholder="Digite o ano">
+    <div>
+      <button id="verificar-btn">Verificar</button>
+      <button id="next-btn">Próxima</button>
+    </div>
+  </div>
+</main>
+<script src="index.js"></script>
+</body>
+</html>

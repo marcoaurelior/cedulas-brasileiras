@@ -1,0 +1,146 @@
+/* Estilos básicos para o jogo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+#game-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+#cedula-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Adiciona cursor pointer para a imagem */
+}
+
+#info-text-small {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.dica {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: calc(100% - 22px); /* Ajuste para o padding do botão e a borda */
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center; /* Centraliza o texto dentro da caixa de entrada */
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px auto; /* Margem automática nas laterais para centralizar */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block; /* Garante que o botão seja tratado como um bloco */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #004494;
+  transform: translateY(0);
+}
+
+.selected {
+  background-color: #d4edda; /* Cor de fundo verde claro para seleção correta */
+  color: #155724; /* Cor do texto verde escuro */
+}
+
+.incorrect {
+  background-color: #f8d7da; /* Cor de fundo vermelho claro para seleção incorreta */
+  color: #721c24; /* Cor do texto vermelho escuro */
+}
+
+#next-btn {
+  display: none; /* Inicialmente escondido */
+  margin-top: 20px;
+}
+
+.info-box {
+  display: none; /* Inicialmente escondido */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#info-text {
+  margin-bottom: 10px;
+}
+
+#info-ok-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#info-ok-btn:hover {
+  background-color: #0056b3;
+}
+
+#info-ok-btn:active {
+  background-color: #004494;
+}
+
+@media (max-width: 768px) {
+  input[type="number"] {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .dica {
+    font-size: 16px;
+  }
+}
