@@ -15,6 +15,7 @@
       <li><a href="list-ballots.html">Lista de Cédulas</a></li>
     </ul>
   </nav>
+  <button type="button" id="info-button" class="info-button">Sobre a Página</button> <!-- Botão no canto superior direito -->
   <h1>Lista de Cédulas</h1>
 </header>
 <main>
@@ -26,6 +27,17 @@
   </section>
   <section id="cedulas-container"></section>
 </main>
+
+<!-- Modal -->
+<div id="info-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Sobre a Página</h2>
+    <p>
+      Esta página é dedicada à apresentação de cédulas brasileiras que foram emitidas desde a década de 1990. A moeda brasileira, o Real, foi introduzida em 1994 como parte de um plano econômico que ajudou a estabilizar a economia do país. Aqui você encontrará imagens e informações detalhadas sobre as cédulas, que são parte importante da história econômica e cultural do nosso país.
+    </p>
+  </div>
+</div>
 <script src="list-ballots.js"></script>
 </body>
 </html>

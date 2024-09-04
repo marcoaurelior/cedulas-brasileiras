@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             value: 1,
-            frente: '../assets/moedas/1centavo-1994-frente.jpeg',
+            frente: '../assets/moedas/1centavo-1994-frente.png',
             verso: '../assets/moedas/1centavo-1994-verso.png',
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,01\nPeríodo de Circulação: 1994-Atualidade"
@@ -371,7 +371,14 @@ document.addEventListener('DOMContentLoaded', () => {
             frente: '../assets/moedas/25centavos-1994-frente.png',
             verso: '../assets/moedas/25centavos-1994-verso.png',
             ano: 1994,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,25\nPeríodo de Circulação: 1994-Atualidade"
+            info: "Fabricantes: Casa da Moeda do Brasil\nValor: R$ 0,25\nPeríodo de Circulação: 1994-Atualidade"
+        },
+        {
+            value: 25,
+            frente: '../assets/moedas/25centavos-1998-frente.png',
+            verso: '../assets/moedas/25centavos-1998-verso.png',
+            ano: 1998,
+            info: "Fabricantes: Casa da Moeda do Brasil\nValor: R$ 0,25\nPeríodo de Circulação: 1998-Atualidade"
         },
         {
             value: 10,
@@ -386,6 +393,76 @@ document.addEventListener('DOMContentLoaded', () => {
             verso: '../assets/moedas/5centavos-1994-verso.png',
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,05\nPeríodo de Circulação: 1994-Atualidade"
+        },
+
+        {
+            value: 1,
+            frente: '../assets/moedas/1centavo-1994-frente-2.png',
+            verso: '../assets/moedas/1centavo-1994-verso-2.png',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,01\nPeríodo de Circulação: 1994-Atualidade"
+        },
+        {
+            value: 1,
+            frente: '../assets/moedas/1real-1994-frente-2.png',
+            verso: '../assets/moedas/1real-1994-verso-2.png',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 1994-Atualidade"
+        }, {
+            value: 1,
+            frente: '../assets/moedas/1real-2002-frente.png',
+            verso: '../assets/moedas/1real-2002-verso.png',
+            ano: 2002,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2002-Atualidade"
+        },
+        {
+            value: 5,
+            frente: '../assets/moedas/5centavos-1998-frente.png',
+            verso: '../assets/moedas/5centavos-1998-verso.png',
+            ano: 1998,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,05\nPeríodo de Circulação: 1998-Atualidade"
+        },
+        {
+            value: 5,
+            frente: '../assets/moedas/5centavos-2019-frente.png',
+            verso: '../assets/moedas/5centavos-2019-verso.png',
+            ano: 2019,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,05\nPeríodo de Circulação: 2019-Atualidade"
+        },
+        {
+            value: 10,
+            frente: '../assets/moedas/10centavos-1994-frente-2.png',
+            verso: '../assets/moedas/10centavos-1994-verso-2.png',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,10\nPeríodo de Circulação: 1994-Atualidade"
+        },
+        {
+            value: 5,
+            frente: '../assets/moedas/5centavos-1998-frente.png',
+            verso: '../assets/moedas/5centavos-1998-verso.png',
+            ano: 1998,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,05\nPeríodo de Circulação: 1998-Atualidade"
+        },
+        {
+            value: 50,
+            frente: '../assets/moedas/50centavos-1998-frente.png',
+            verso: '../assets/moedas/50centavos-1998-verso.png',
+            ano: 1998,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,50\nPeríodo de Circulação: 1998-Atualidade"
+        },
+        {
+            value: 50,
+            frente: '../assets/moedas/50centavos-2002-frente.png',
+            verso: '../assets/moedas/50centavos-2002-verso.png',
+            ano: 2002,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,50\nPeríodo de Circulação: 2002-Atualidade"
+        },
+        {
+            value: 50,
+            frente: '../assets/moedas/50centavos-2019-frente.png',
+            verso: '../assets/moedas/50centavos-2019-verso.png',
+            ano: 2019,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,50\nPeríodo de Circulação: 2019-Atualidade"
         },
     ];
 
@@ -421,6 +498,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             container.appendChild(cedulaElement);
         });
+    }
+
+    const modal = document.getElementById('info-modal');
+    const btn = document.getElementById('info-button');
+    const span = document.getElementsByClassName('close')[0];
+
+// Abre o modal quando o botão for clicado
+    btn.onclick = function () {
+        modal.style.display = 'block';
+    }
+
+// Fecha o modal quando o 'X' for clicado
+    span.onclick = function () {
+        modal.style.display = 'none';
+    }
+
+// Fecha o modal se o usuário clicar fora da área de conteúdo
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
     }
 
     function filterCedulas() {
