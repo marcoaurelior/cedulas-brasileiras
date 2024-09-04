@@ -1,0 +1,34 @@
+/* Estilo do Menu */
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #575757;
+}
+
+header h1 {
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+}

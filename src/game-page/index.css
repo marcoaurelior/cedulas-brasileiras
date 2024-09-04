@@ -144,3 +144,45 @@ button:active {
     font-size: 16px;
   }
 }
+
+/* Estilos para o menu */
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #575757;
+}
+
+/* Estilos adicionais para o header */
+header {
+  padding: 1rem;
+  background-color: #444;
+  color: #fff;
+}
+
+header h1 {
+  text-align: center;
+  margin: 0;
+}
+
