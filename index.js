@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function atualizarDica(anoCorreto) {
         const dica = document.getElementById('dica');
-        const intervalo = 10; // Intervalo de 10 anos
+        const intervalo = 6; // Intervalo de 6 anos
 
         // Gera um ponto aleatório dentro do intervalo permitido para o início do período
         const anoInicio = Math.max(1900, anoCorreto - intervalo);
