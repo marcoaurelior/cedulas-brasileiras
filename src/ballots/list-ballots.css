@@ -37,41 +37,6 @@ nav ul.menu li a {
 main {
   padding: 20px;
 }
-.cedula {
-  display: inline-block;
-  width: 32%;
-  margin: 10px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  box-sizing: border-box;
-  text-align: center;
-  position: relative; /* Para posicionar informações sobre a cédula se necessário */
-  cursor: pointer; /* Indica que o elemento é clicável */
-  transition: transform 0.3s ease; /* Suaviza a transição de estado, se desejado */
-}
-
-.cedula:hover {
-  transform: scale(1.05); /* Amplia ligeiramente o elemento ao passar o mouse */
-}
-
-.cedula img {
-  max-width: 100%;
-  height: auto;
-  display: block; /* Garante que as imagens ocupem o espaço disponível */
-}
-
-.cedula-info {
-  margin-top: 10px;
-  font-size: 1.2em;
-}
-
-.cedula .frente {
-  display: block; /* Exibe a frente da cédula por padrão */
-}
-
-.cedula .verso {
-  display: none; /* Oculta o verso da cédula por padrão */
-}
 
 #search {
   text-align: center;
@@ -116,4 +81,42 @@ main {
 
 #search button:hover {
   background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+.cedula {
+  display: inline-block;
+  width: 32%;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative; /* Para posicionar informações sobre a cédula se necessário */
+  cursor: pointer; /* Indica que o elemento é clicável */
+  transition: transform 0.3s ease; /* Suaviza a transição de estado, se desejado */
+  background-color: #fff; /* Cor de fundo para melhorar a visibilidade */
+}
+
+.cedula:hover {
+  transform: scale(1.05); /* Amplia ligeiramente o elemento ao passar o mouse */
+}
+
+.cedula img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Garante que as imagens ocupem o espaço disponível */
+  margin: 0 auto; /* Centraliza a imagem horizontalmente dentro do contêiner */
+}
+
+.cedula-info {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.cedula .frente {
+  display: block; /* Exibe a frente da cédula por padrão */
+}
+
+.cedula .verso {
+  display: none; /* Oculta o verso da cédula por padrão */
 }

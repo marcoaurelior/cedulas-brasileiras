@@ -186,17 +186,25 @@ header h1 {
   margin: 0;
 }
 
-@keyframes cair {
-  0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* Estilo para a imagem com efeito de zoom */
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
 }
 
-.cedula-cair {
-  animation: cair 0.5s ease-out;
+#cedula-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Adiciona cursor pointer para a imagem */
+  transition: transform 0.3s ease; /* Suaviza a transição do zoom */
+  margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
 }
+
+#cedula-img:hover {
+  transform: scale(1.02); /* Ajuste o valor para o nível de zoom desejado */
+}
+
+
