@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Cédulas</title>
-  <link rel="stylesheet" href="list-ballots.css">
-  <link rel="icon" href="../../icon-1real.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cédulas</title>
+    <link rel="stylesheet" href="list-ballots.css">
+    <link rel="icon" href="../../icon-1real.png" type="image/png">
 </head>
 <body>
 <header>
-  <nav>
-    <ul class="menu">
-      <li><a href="../../index.html">Início</a></li>
-      <li><a href="list-ballots.html">Lista de Cédulas</a></li>
-    </ul>
-  </nav>
-  <button type="button" id="info-button" class="info-button">Sobre a Página</button> <!-- Botão no canto superior direito -->
-  <h1>Lista de Cédulas</h1>
+    <nav>
+        <ul class="menu">
+            <li><a href="../../index.html">Início</a></li>
+        </ul>
+    </nav>
 </header>
+<section id="info-section">
+    <div class="info-container">
+        <img src="../../exclamation-point-jumping.gif" alt="Exclamação" class="exclamation-gif" id="open-modal">
+    </div>
+</section>
+
+<h1>Lista de Cédulas</h1>
+
+
 <main>
-  <!-- Caixa de pesquisa -->
-  <section id="search">
-    <label for="value-input">Valor:</label>
-    <input type="number" id="value-input" placeholder="Digite o valor">
-    <button type="button" id="search-button">Buscar</button>
-  </section>
-  <section id="cedulas-container"></section>
+    <!-- Caixa de pesquisa -->
+    <section id="search">
+        <input type="number" id="value-input" placeholder="Digite um valor para pesquisar">
+    </section>
+
+    <section id="cedulas-container"></section>
 </main>
 
-<!-- Modal -->
 <div id="info-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Sobre a Página</h2>
-    <p>
-      Esta página é dedicada à apresentação de cédulas brasileiras que foram emitidas desde a década de 1990. A moeda brasileira, o Real, foi introduzida em 1994 como parte de um plano econômico que ajudou a estabilizar a economia do país. Aqui você encontrará imagens e informações detalhadas sobre as cédulas, que são parte importante da história econômica e cultural do nosso país.
-    </p>
-  </div>
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <div class="modal-text">
+            <h2 class="modal-title">Sobre a Página</h2>
+            <p>
+                Esta página é dedicada à apresentação de cédulas brasileiras que foram emitidas desde a década de 1990.
+                A moeda brasileira, o Real, foi introduzida em 1994 como parte de um plano econômico que ajudou a
+                estabilizar a economia do país. Aqui você encontrará imagens e informações detalhadas sobre as cédulas,
+                que são parte importante da história econômica e cultural do nosso país.
+            </p>
+        </div>
+    </div>
 </div>
+
+
 <script src="list-ballots.js"></script>
 </body>
 </html>

@@ -2,12 +2,11 @@ body {
   font-family: Arial, sans-serif; /* Fonte padrão */
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4; /* Cor de fundo leve */
+  background-color: #ffffff; /* Cor de fundo leve */
 }
 
 header {
-  background-color: #007bff; /* Cor de fundo do cabeçalho */
-  color: white;
+  background-color: #727272; /* Cor de fundo do cabeçalho */
   padding: 10px 0;
   text-align: center;
 }
@@ -31,21 +30,61 @@ nav ul.menu li {
 nav ul.menu li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700; /* Fonte mais grossa */
+  transition: transform 0.3s ease, font-size 0.3s ease; /* Transição suave */
 }
+
+nav ul.menu li a:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do texto */
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+}
+
+
+nav ul.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, font-size 0.3s ease; /* Transição suave */
+}
+
+nav ul.menu li a:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do texto */
+  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+}
+
 
 main {
   padding: 20px;
 }
 
+/* Estilo da caixa de pesquisa */
 #search {
-  text-align: center;
-  background-color: #ffffff; /* Cor de fundo branca */
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Organiza os itens em uma coluna */
+  justify-content: center; /* Centraliza verticalmente o conteúdo */
+  align-items: center; /* Centraliza horizontalmente o conteúdo */
+  text-align: center; /* Centraliza o texto dentro do elemento */
+  background-image: url('../../search-background.jpg'); /* Caminho para a imagem de fundo */
+  background-size: 100% 100%; /* Ajusta a imagem para 90% da largura e altura do elemento */
+  background-position: center; /* Centraliza a imagem no fundo */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
   border: 1px solid #ccc; /* Borda leve */
   border-radius: 8px; /* Bordas arredondadas */
   padding: 40px;
-  max-width: 400px;
-  margin: 20px auto 50px;
+  max-width: 1900px; /* Aumenta a largura máxima do elemento */
+  min-height: 150px; /* Aumenta a altura máxima do elemento */
+  margin: 20px auto 30px;
+  color: #fff; /* Cor do texto para contraste */
+}
+
+#value-input {
+  width: 80%; /* Ajusta a largura do input para 80% do elemento pai */
+  max-width: 400px; /* Largura máxima do input */
+  height: 40px; /* Ajusta a altura do input */
+  padding: 8px; /* Espaçamento interno do input */
+  font-size: 16px; /* Tamanho da fonte dentro do input */
+  border: 1px solid #ccc; /* Borda do input */
+  border-radius: 4px; /* Bordas arredondadas do input */
 }
 
 /* Título acima da caixa de pesquisa */
@@ -67,98 +106,7 @@ main {
   margin-right: 10px; /* Espaço entre o input e o botão */
 }
 
-/* Estilos para o botão de busca */
-#search button {
-  font-size: 1em;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #007bff; /* Cor de fundo azul */
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s; /* Transição suave ao passar o mouse */
-}
 
-#search button:hover {
-  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
-}
-
-.cedula {
-  display: inline-block;
-  width: 32%;
-  margin: 10px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  box-sizing: border-box;
-  text-align: center;
-  position: relative; /* Para posicionar informações sobre a cédula se necessário */
-  cursor: pointer; /* Indica que o elemento é clicável */
-  transition: transform 0.3s ease; /* Suaviza a transição de estado, se desejado */
-  background-color: #fff; /* Cor de fundo para melhorar a visibilidade */
-}
-
-.cedula:hover {
-  transform: scale(1.05); /* Amplia ligeiramente o elemento ao passar o mouse */
-}
-
-.cedula img {
-  max-width: 100%;
-  height: auto;
-  display: block; /* Garante que as imagens ocupem o espaço disponível */
-  margin: 0 auto; /* Centraliza a imagem horizontalmente dentro do contêiner */
-}
-
-.cedula-info {
-  margin-top: 10px;
-  font-size: 1.2em;
-}
-
-.cedula .frente {
-  display: block; /* Exibe a frente da cédula por padrão */
-}
-
-.cedula .verso {
-  display: none; /* Oculta o verso da cédula por padrão */
-}
-.info-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px; /* Bordas arredondadas para o botão */
-  cursor: pointer;
-}
-
-.info-button:hover {
-  background-color: #0056b3;
-}
-
-/* Estilos do Modal */
-.modal {
-  display: none; /* Esconde o modal por padrão */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  text-align: center;
-  border-radius: 10px; /* Bordas arredondadas para o conteúdo do modal */
-}
 
 .close {
   color: #aaa;
@@ -175,4 +123,182 @@ main {
   text-decoration: none;
   cursor: pointer;
   background-color: #ddd; /* Cor de fundo ao passar o mouse sobre o botão de fechar */
+}
+
+.cedula {
+  display: inline-block;
+  width: 31%;
+  margin: 20px; /* Aumenta a margem entre os cards */
+  border: 2px solid #a6a6a6; /* Borda preta mais espessa */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease, opacity 0.5s ease; /* Transição suave */
+  background-color: #fff;
+  border-radius: 8px; /* Arredondar os cantos */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  overflow: hidden; /* Garante que o conteúdo não transborde o container */
+}
+
+.cedula:hover {
+  transform: scale(1.1); /* Amplia ainda mais o card ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra ainda mais intensa ao passar o mouse */
+  padding-bottom: 100px; /* Adiciona mais espaço na parte inferior para o texto */
+}
+
+.cedula img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px; /* Arredondar as bordas das imagens */
+  transition: transform 0.6s ease; /* Transição suave */
+}
+
+.cedula:hover img {
+  transform: translateY(-2px); /* Move a imagem para cima ao passar o mouse */
+}
+
+.cedula-info-container {
+  position: absolute;
+  bottom: 0; /* Posiciona o container na parte inferior, sem margem */
+  left: 0; /* Remove a margem à esquerda */
+  width: 100%; /* Faz o container ocupar toda a largura do card */
+  background-color: #7d5e25; /* Fundo laranja */
+  padding: 5px; /* Padding mínimo para garantir espaço */
+  box-sizing: border-box;
+  text-align: center; /* Centraliza o texto */
+  border-radius: 5px; /* Remove o arredondamento das bordas */
+  font-size: 1em;
+  color: #fff; /* Texto branco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Transição suave */
+  opacity: 0; /* Começa escondido */
+  transform: translateY(30px); /* Começa fora da visão, abaixo da imagem */
+  z-index: 2; /* Garante que o texto fique acima da imagem */
+}
+
+.cedula-info-container p, .cedula-info-container .nota {
+  margin-bottom: 5px; /* Margem inferior mínima */
+}
+
+.cedula:hover .cedula-info-container {
+  opacity: 1; /* Mostra o container de informações ao passar o mouse */
+  transform: translateY(-18px); /* Move o texto para cima, alinhando com a imagem */
+}
+
+/* Efeito nas outras cédulas quando uma é acionada */
+.cedula.other {
+  opacity: 0.7; /* Reduz a opacidade das outras cédulas */
+}
+
+#open-modal {
+  width: 50px; /* Ajuste o valor conforme necessário */
+  height: 50px; /* Ajuste o valor conforme necessário */
+}
+
+.modal {
+  display: none; /* Esconde o modal por padrão */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+}
+
+/* Estilos para o conteúdo do modal */
+.modal-content {
+  background-image: url('../../background-brazil-p.jpg'); /* Imagem de fundo do modal */
+  background-size: cover; /* Faz a imagem cobrir todo o modal */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  color: #fff; /* Cor do texto padrão do modal */
+  margin: 5% auto; /* Centraliza o modal verticalmente e horizontalmente */
+  width: 40%; /* Ajuste a largura do modal conforme necessário */
+  height: auto; /* Ajusta a altura do modal para o tamanho do conteúdo */
+  max-height: 80%; /* Define a altura máxima para evitar que o modal fique muito grande */
+  position: relative; /* Necessário para o posicionamento do conteúdo */
+  border-radius: 15px; /* Define o raio da borda arredondada */
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo em coluna */
+  align-items: center; /* Centraliza horizontalmente */
+  padding: 20px; /* Adiciona padding para o conteúdo não ficar grudado nas bordas */
+}
+
+/* Estilos para o botão de fechamento (x) */
+.close {
+  position: absolute; /* Posiciona o botão de fechamento fora do fluxo normal do layout */
+  top: 10px; /* Distância do topo */
+  right: 10px; /* Distância da direita */
+  color: #fff; /* Cor do texto do botão de fechamento */
+  font-size: 28px; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte */
+  cursor: pointer; /* Cursor de mão ao passar o mouse */
+}
+
+/* Estilos para a caixa de texto dentro do modal */
+.modal-text {
+  background: rgba(200, 200, 200, 0.7); /* Fundo cinza mais transparente para destacar o texto */
+  padding: 20px;
+  border-radius: 10px; /* Borda arredondada para a caixa de texto */
+  width: 100%; /* Largura da caixa de texto ajustada para 100% do modal-content */
+  max-width: 600px; /* Largura máxima para a caixa de texto */
+  box-sizing: border-box; /* Inclui padding e border no tamanho total */
+  text-align: justify; /* Justifica o texto */
+  color: #000; /* Cor do texto preto */
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo em coluna */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  font-size: 20px;
+}
+
+/* Estilos para o título do modal */
+.modal-title {
+  text-align: center;
+  margin: 0 0 20px 0; /* Remove a margem superior e adiciona margem inferior */
+  padding: 0; /* Remove o padding padrão */
+  color: #000; /* Cor do título preto para contraste */
+  margin-bottom: 0px;
+}
+
+/* Estilos para a seção de informações */
+#info-section {
+  position: fixed; /* Fixa o elemento na página */
+  top: 70px; /* Distância do topo da página */
+  right: 70px; /* Distância do lado direito da página */
+  z-index: 1000; /* Garante que o elemento fique sobre outros conteúdos */
+}
+
+/* Estilos para o container da informação */
+.info-container {
+  display: flex; /* Flexbox para centralizar o conteúdo se necessário */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilos para a imagem dentro do container */
+.exclamation-gif {
+  width: 50px; /* Largura da imagem */
+  height: 50px; /* Altura da imagem */
+}
+
+/* Estilos para o título h1 */
+h1 {
+  font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
+  font-size: 3rem; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte para destaque */
+  color: #2c3e50; /* Cor escura para boa legibilidade */
+  text-align: center; /* Centraliza o texto */
+  text-transform: uppercase; /* Deixa o texto em maiúsculas */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  margin: 20px 0; /* Margem superior e inferior */
+  padding: 10px; /* Padding para adicionar espaço interno */
+  border-bottom: 2px solid #3498db; /* Linha de destaque abaixo do título */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do texto */
 }

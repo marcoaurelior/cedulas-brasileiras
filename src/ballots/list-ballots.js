@@ -189,56 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ano: 2020,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 200,00\nPeríodo de Circulação: 2020-Atualidade"
         },
-
-        {
-            frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
-            verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
-            ano: 1993,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
-        },
-        {
-            frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
-            verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
-            ano: 1994,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
-        },
-        {
-            frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
-            verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
-            ano: 1993,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
-        },
-        {
-            frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
-            verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
-            ano: 1993,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
-        },
-        {
-            frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
-            verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
-            ano: 1993,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
-        },
-        {
-            frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
-            verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
-            ano: 1994,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
-        },
-        {
-            frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
-            verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
-            ano: 1993,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
-        },
-        {
-            frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
-            verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
-            ano: 1993,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
-        },
-
         {
             value: 1,
             frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
@@ -464,10 +414,61 @@ document.addEventListener('DOMContentLoaded', () => {
             ano: 2019,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,50\nPeríodo de Circulação: 2019-Atualidade"
         },
-    ];
 
+        {
+            frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
+            verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
+        },
+        {
+            frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
+            verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
+        },
+        {
+            frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+    ];
     const container = document.getElementById('cedulas-container');
     const valueInput = document.getElementById('value-input');
+    const modal = document.getElementById('info-modal');
+    const btn = document.getElementById('open-modal'); // Atualizado para usar o botão de abrir modal
+    const span = document.getElementsByClassName('close')[0];
 
     function renderCedulas(filteredCedulas) {
         container.innerHTML = ''; // Limpa o container antes de renderizar
@@ -480,7 +481,9 @@ document.addEventListener('DOMContentLoaded', () => {
             cedulaElement.innerHTML = `
                 <img src="${cedula.frente}" alt="Frente da cédula" class="cedula-img frente">
                 <img src="${cedula.verso}" alt="Verso da cédula" class="cedula-img verso" style="display: none;">
-                <div class="cedula-info">${formattedInfo}</div>
+                <div class="cedula-info-container">
+                    <div class="cedula-info-card">${formattedInfo}</div>
+                </div>
             `;
 
             cedulaElement.addEventListener('click', () => {
@@ -496,27 +499,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            // Adiciona eventos de hover para manipular outros cards
+            cedulaElement.addEventListener('mouseenter', () => {
+                document.querySelectorAll('.cedula').forEach(otherCedula => {
+                    if (otherCedula !== cedulaElement) {
+                        otherCedula.classList.add('other');
+                    }
+                });
+            });
+
+            cedulaElement.addEventListener('mouseleave', () => {
+                document.querySelectorAll('.cedula').forEach(otherCedula => {
+                    otherCedula.classList.remove('other');
+                });
+            });
+
             container.appendChild(cedulaElement);
         });
     }
 
-    const modal = document.getElementById('info-modal');
-    const btn = document.getElementById('info-button');
-    const span = document.getElementsByClassName('close')[0];
-
-// Abre o modal quando o botão for clicado
-    btn.onclick = function () {
+    // Abre o modal ao clicar no botão
+    btn.onclick = function() {
         modal.style.display = 'block';
     }
 
-// Fecha o modal quando o 'X' for clicado
-    span.onclick = function () {
+    // Fecha o modal ao clicar no botão de fechar
+    span.onclick = function() {
         modal.style.display = 'none';
     }
 
-// Fecha o modal se o usuário clicar fora da área de conteúdo
-    window.onclick = function (event) {
-        if (event.target == modal) {
+    // Fecha o modal se o usuário clicar fora do modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
             modal.style.display = 'none';
         }
     }
