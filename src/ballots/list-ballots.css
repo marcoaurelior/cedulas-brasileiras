@@ -1,34 +1,119 @@
-/* Estilo do Menu */
-nav {
-  background-color: #333;
-  color: #fff;
-}
-
-.menu {
-  list-style: none;
+body {
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  margin: 0;
   padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+  background-color: #f4f4f4; /* Cor de fundo leve */
 }
 
-.menu li {
-  margin: 0;
-}
-
-.menu a {
-  display: block;
-  padding: 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.menu a:hover {
-  background-color: #575757;
+header {
+  background-color: #007bff; /* Cor de fundo do cabeçalho */
+  color: white;
+  padding: 10px 0;
+  text-align: center;
 }
 
 header h1 {
-  text-align: center;
-  padding: 1rem;
   margin: 0;
+  font-size: 2em;
+}
+
+nav ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul.menu li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+.cedula {
+  display: inline-block;
+  width: 32%;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative; /* Para posicionar informações sobre a cédula se necessário */
+  cursor: pointer; /* Indica que o elemento é clicável */
+  transition: transform 0.3s ease; /* Suaviza a transição de estado, se desejado */
+}
+
+.cedula:hover {
+  transform: scale(1.05); /* Amplia ligeiramente o elemento ao passar o mouse */
+}
+
+.cedula img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Garante que as imagens ocupem o espaço disponível */
+}
+
+.cedula-info {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.cedula .frente {
+  display: block; /* Exibe a frente da cédula por padrão */
+}
+
+.cedula .verso {
+  display: none; /* Oculta o verso da cédula por padrão */
+}
+
+#search {
+  text-align: center;
+  background-color: #ffffff; /* Cor de fundo branca */
+  border: 1px solid #ccc; /* Borda leve */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 40px;
+  max-width: 400px;
+  margin: 20px auto 50px;
+}
+
+/* Título acima da caixa de pesquisa */
+#search label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333; /* Cor do texto */
+}
+
+/* Estilos para o campo de entrada */
+#search input {
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid #ccc; /* Borda leve */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: transparent; /* Cor de fundo transparente */
+  outline: none; /* Remove contorno padrão */
+  margin-right: 10px; /* Espaço entre o input e o botão */
+}
+
+/* Estilos para o botão de busca */
+#search button {
+  font-size: 1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff; /* Cor de fundo azul */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+#search button:hover {
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
