@@ -269,7 +269,7 @@ main {
 
 /* Estilos para a seção de informações */
 #info-section {
-  position: fixed; /* Fixa o elemento na página */
+  position: absolute; /* Fixa o elemento na página */
   top: 70px; /* Distância do topo da página */
   right: 70px; /* Distância do lado direito da página */
   z-index: 1000; /* Garante que o elemento fique sobre outros conteúdos */
