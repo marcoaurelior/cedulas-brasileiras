@@ -359,14 +359,34 @@ document.addEventListener('DOMContentLoaded', () => {
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,01\nPeríodo de Circulação: 1994-Atualidade"
         },
-
         {
             value: 50,
             frente: '../assets/moedas/50centavos-1994-frente.png',
             verso: '../assets/moedas/50centavos-1994-verso.png',
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,50\nPeríodo de Circulação: 1994-Atualidade"
-        }
+        },
+        {
+            value: 25,
+            frente: '../assets/moedas/25centavos-1994-frente.png',
+            verso: '../assets/moedas/25centavos-1994-verso.png',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,25\nPeríodo de Circulação: 1994-Atualidade"
+        },
+        {
+            value: 10,
+            frente: '../assets/moedas/10centavos-1994-frente.png',
+            verso: '../assets/moedas/10centavos-1994-verso.png',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,10\nPeríodo de Circulação: 1994-Atualidade"
+        },
+        {
+            value: 5,
+            frente: '../assets/moedas/5centavos-1994-frente.png',
+            verso: '../assets/moedas/5centavos-1994-verso.png',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,05\nPeríodo de Circulação: 1994-Atualidade"
+        },
     ];
 
     const container = document.getElementById('cedulas-container');
