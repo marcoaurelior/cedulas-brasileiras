@@ -574,5 +574,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     valueInput.addEventListener('input', filterCedulas);
 
-    renderCedulas(cedulas); // Renderiza todas as cédulas inicialmente
+    renderCedulas(cedulas);
 });

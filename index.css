@@ -14,6 +14,7 @@ body::before {
     height: 100%;
     background-image: url('src/gifsAndImages/wallpaperflare.com_wallpaper.jpg');
     background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    object-fit: cover;
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
     opacity: 0.95; /* Ajuste a opacidade conforme necessário (0.0 a 1.0) */
@@ -204,20 +205,30 @@ header {
 header h1 {
     margin: 0;
     font-size: 2em;
+
 }
+
+.title-h1 {
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 1); !* Sombra ao redor do h1 *!*/
+    text-align: center;
+    background-color: #ffffff;
+    margin-top: 0;
+    font-size: 30px;
+    padding: 10px;
+}
+
 
 h1 {
     font-family: 'Roboto', sans-serif; /* Fonte limpa e moderna */
     font-size: 3rem; /* Tamanho da fonte */
     font-weight: bold; /* Peso da fonte para destaque */
-    color: #2c3e50; /* Cor escura para boa legibilidade */
+    color: #ffffff; /* Cor escura para boa legibilidade */
     text-align: center; /* Centraliza o texto */
     text-transform: uppercase; /* Deixa o texto em maiúsculas */
     letter-spacing: 1px; /* Espaçamento entre letras */
     margin: 20px 0; /* Margem superior e inferior */
     padding: 10px; /* Padding para adicionar espaço interno */
     border-bottom: 0.5px solid #ffffff; /* Linha de destaque abaixo do título */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do texto */
 }
 
 
@@ -369,7 +380,7 @@ h1 {
 
 #info-section {
     position: absolute; /* Fixa o elemento na página */
-    top: 70px; /* Distância do topo da página */
+    top: 40px; /* Distância do topo da página */
     right: 250px; /* Distância do lado direito da página */
     z-index: 1000; /* Garante que o elemento fique sobre outros conteúdos */
 }
@@ -418,4 +429,5 @@ footer {
     width: 100%;
     font-size: 10px;
     position: fixed;
+    color: #ffffff;
 }
