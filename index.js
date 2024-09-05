@@ -226,11 +226,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let cedulasEmbaralhadas = [];
     let cedulaAtual = 0;
     let mostrandoFrente = true;
-    let pontos = 0; // Variável para armazenar a pontuação
-    const custoRodada = 0; // Custo de cada rodada, se a pessoa acertar
-    const custoRodadaErro = 50; // Custo de cada rodada, se a pessoa errar
-    const custoRodadaCarregar = 50; // Custo ao carregar uma nova cédula
-    const custoDica = 30; // Custo de 30 pontos para exibir a dica
+    let pontos = 0;
+    let pontosPorCedula = 0; // Variável para controlar a pontuação gerada por clique para a cédula atual
+    const maxPontosPorCedula = 50; // Limite de 50 pontos por cédula
+    const custoRodada = 0;
+    const custoRodadaErro = 50;
+    const custoRodadaCarregar = 50;
+    const custoDica = 30;
     const custoDicaImg = document.getElementById('custo-dica-img');
     const dicaElement = document.getElementById('dica');
 
@@ -250,6 +252,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cedulasEmbaralhadas.length === 0) {
             cedulasEmbaralhadas = embaralharCedulas();
         }
+
+        pontosPorCedula = 0;
 
         // Cobrar pontos ao carregar uma nova cédula
         cobrarRodada(custoRodadaCarregar);
@@ -399,8 +403,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function adicionarPontosPorClique() {
-        pontos += 5;
-        atualizarPontuacao();
+        // Verifica se já atingiu o limite de 50 pontos por cédula
+        if (pontosPorCedula < maxPontosPorCedula) {
+            const pontosAdicionar = 5; // Quantidade de pontos por clique
+            const pontosRestantes = maxPontosPorCedula - pontosPorCedula;
+
+            // Adiciona os pontos restantes até o limite
+            const pontosParaAdicionar = Math.min(pontosAdicionar, pontosRestantes);
+
+            pontos += pontosParaAdicionar;
+            pontosPorCedula += pontosParaAdicionar; // Atualiza os pontos gerados por clique para essa cédula
+            atualizarPontuacao();
+        } else {
+            document.getElementById('mensagem').textContent = 'Você já atingiu o limite de 50 pontos para esta cédula.';
+            document.getElementById('mensagem').style.color = 'orange';
+        }
     }
 
     function cobrarRodada(custo) {
