@@ -202,9 +202,24 @@ header {
 }
 
 header h1 {
-  text-align: center;
+  margin: 0;
   font-size: 2em;
 }
+
+h1 {
+  font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
+  font-size: 3rem; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte para destaque */
+  color: #2c3e50; /* Cor escura para boa legibilidade */
+  text-align: center; /* Centraliza o texto */
+  text-transform: uppercase; /* Deixa o texto em maiúsculas */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  margin: 20px 0; /* Margem superior e inferior */
+  padding: 10px; /* Padding para adicionar espaço interno */
+  border-bottom: 2px solid #3498db; /* Linha de destaque abaixo do título */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do texto */
+}
+
 
 /* Estilo para a imagem com efeito de zoom */
 #game-container {

@@ -127,7 +127,7 @@ main {
 
 .cedula {
   display: inline-block;
-  width: 31%;
+  width: 29.5%;
   margin: 20px; /* Aumenta a margem entre os cards */
   border: 2px solid #a6a6a6; /* Borda preta mais espessa */
   padding: 10px;

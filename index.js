@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let cedulasEmbaralhadas = [];
     let cedulaAtual = 0;
     let mostrandoFrente = true;
-    let pontos = 0;
+    let pontos = 150;
     let pontosPorCedula = 0; // Variável para controlar a pontuação gerada por clique para a cédula atual
     const maxPontosPorCedula = 150; // Limite de 50 pontos por cédula
     const custoRodada = 0;
@@ -342,21 +342,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function mostrarDica() {
         if (cobrarPontosDica()) {
             const dica = document.getElementById('dica');
-            if (dica.style.display === 'none' || dica.style.display === '') {
-                const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
-                const intervalo = 41; // Intervalo de 20 anos
+            const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
+            const intervalo = 41; // Intervalo de 20 anos
 
-                const anoInicio = Math.max(1800, anoCorreto - intervalo);
-                const anoFim = Math.min(2024, anoCorreto + intervalo);
+            const anoInicio = Math.max(1800, anoCorreto - intervalo);
+            const anoFim = Math.min(2024, anoCorreto + intervalo);
 
-                const inicioDica = Math.floor(Math.random() * (anoFim - anoInicio - intervalo + 1)) + anoInicio;
-                const fimDica = inicioDica + intervalo;
+            const inicioDica = Math.floor(Math.random() * (anoFim - anoInicio - intervalo + 1)) + anoInicio;
+            const fimDica = inicioDica + intervalo;
 
-                dica.textContent = `Dica: Entre ${inicioDica} e ${fimDica}`;
-                dica.style.display = 'block';
-            } else {
-                dica.style.display = 'none';
-            }
+            dica.textContent = `Dica: Entre ${inicioDica} e ${fimDica}`;
+            dica.style.display = 'block'; // Garante que a dica esteja visível
+
+            // Se a dica já estiver visível, você pode querer limpar a dica anterior ou fazer outras atualizações
         }
     }
 
