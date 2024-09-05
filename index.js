@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let mostrandoFrente = true;
     let pontos = 0;
     let pontosPorCedula = 0; // Variável para controlar a pontuação gerada por clique para a cédula atual
-    const maxPontosPorCedula = 50; // Limite de 50 pontos por cédula
+    const maxPontosPorCedula = 100; // Limite de 50 pontos por cédula
     const custoRodada = 0;
     const custoRodadaErro = 50;
     const custoRodadaCarregar = 50;
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mensagem = `Boa tentativa! 👍 Você estava a uma pequena distância, mas ainda ganhou 25 pontos por isso!`;
         } else {
             pontos -= custoRodadaErro; // Penalidade por erro
-            mensagem = `Errado! A cédula é de ${anoCorreto}. Você perdeu ${custoRodadaErro} pontos.`;
+            mensagem = `Errado! A cédula é de ${anoCorreto}. Você perdeu ${custoRodadaErro} pontos. Clique na cédula para conseguir mais.`;
         }
 
         // Atualiza a pontuação com base na proximidade
@@ -403,19 +403,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function adicionarPontosPorClique() {
-        // Verifica se já atingiu o limite de 50 pontos por cédula
-        if (pontosPorCedula < maxPontosPorCedula) {
-            const pontosAdicionar = 5; // Quantidade de pontos por clique
-            const pontosRestantes = maxPontosPorCedula - pontosPorCedula;
+        // Verifica se o jogador tem menos de 50 pontos no total
+        if (pontos < 50) {
+            // Verifica se já atingiu o limite de 50 pontos por cédula
+            if (pontosPorCedula < maxPontosPorCedula) {
+                const pontosAdicionar = 5; // Quantidade de pontos por clique
+                const pontosRestantes = maxPontosPorCedula - pontosPorCedula;
 
-            // Adiciona os pontos restantes até o limite
-            const pontosParaAdicionar = Math.min(pontosAdicionar, pontosRestantes);
+                // Adiciona os pontos restantes até o limite
+                let pontosParaAdicionar = Math.min(pontosAdicionar, pontosRestantes);
 
-            pontos += pontosParaAdicionar;
-            pontosPorCedula += pontosParaAdicionar; // Atualiza os pontos gerados por clique para essa cédula
-            atualizarPontuacao();
+                // Se os pontos totais somados ficarem acima de 50, ajusta para que não ultrapasse
+                if (pontos + pontosParaAdicionar > 50) {
+                    pontosParaAdicionar = 50 - pontos;
+                }
+
+                pontos += pontosParaAdicionar;
+                pontosPorCedula += pontosParaAdicionar; // Atualiza os pontos gerados por clique para essa cédula
+                atualizarPontuacao();
+            } else {
+                document.getElementById('mensagem').textContent = 'Você já atingiu o limite de 50 pontos para esta cédula.';
+                document.getElementById('mensagem').style.color = 'orange';
+            }
         } else {
-            document.getElementById('mensagem').textContent = 'Você já atingiu o limite de 50 pontos para esta cédula.';
+            document.getElementById('mensagem').textContent = 'Você já tem 50 ou mais pontos e não pode ganhar mais.';
             document.getElementById('mensagem').style.color = 'orange';
         }
     }
