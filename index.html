@@ -3,63 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo de Cédulas</title>
-  <link rel="stylesheet" href="index.css">
+  <title>Quiz de Cédulas</title>
   <link rel="icon" href="icon-1real.png" type="image/png">
-  <style>
-    /* Adicione estilos para o contador de pontos aqui, se necessário */
-    #contador-pontos {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-    /* Estilos para o ícone de custo da dica */
-    #custo-dica-img {
-      cursor: pointer;
-      width: 50px; /* Ajuste o tamanho conforme necessário */
-      height: 50px; /* Ajuste o tamanho conforme necessário */
-    }
-    #dica-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <header>
-  <h1>Jogo de Identificação de Cédulas</h1>
   <nav>
     <ul class="menu">
-      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html">Quiz de Conhecimento</a></li>
       <li><a href="src/ballots/list-ballots.html">Lista de Cédulas</a></li>
     </ul>
   </nav>
 </header>
+
+<section id="info-section">
+  <div class="info-container">
+    <img src="exclamation-point-jumping.gif" alt="Exclamação" class="exclamation-gif" id="open-modal">
+  </div>
+</section>
+
 <main>
-  <div id="mensagem"></div>
   <div id="game-container">
+    <div id="mensagem"></div>
     <div id="info-text-small">Clique na cédula para alternar entre frente e verso.</div>
     <div id="game-info">
       <img id="cedula-img" src="" alt="Imagem da cédula">
-      <div id="contador-pontos">Pontuação: <span id="pontos">0</span></div>
+      <div id="contador-pontos">Saldo: <span id="pontos">0</span></div>
     </div>
     <div id="info-box" style="display: none;">
       <p id="info-text"></p>
     </div>
     <div id="dica-container">
       <img id="custo-dica-img" src="light.gif" alt="Custo da dica">
-      <span id="dica">Dica: Entre 1900 e 2000</span>
+      <span id="dica"></span>
     </div>
-
-    <input type="number" id="ano-input" placeholder="Digite o ano">
-
+    <input type="number" id="ano-input" placeholder="Digite o ano...">
     <div>
       <button id="verificar-btn">Verificar</button>
       <button id="next-btn">Próxima</button>
     </div>
   </div>
 </main>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 class="modal-title">Informações sobre o Quiz</h2>
+    <div class="modal-text">
+      <p>
+        Este é um Quiz de identificação de cédulas. O objetivo é adivinhar o ano de fabricação da cédula exibida. Você pode
+        usar as dicas disponíveis para ajudar, mas isso possui um custo.
+      </p>
+      <h3>Informações do Quiz</h3>
+      <ul>
+        <li>Você ganha dinheiro com base na proximidade da sua resposta. Mas cuidado! Se errar, você perde dinheiro.</li>
+        <li>Clique na cédula para alternar entre a frente e o verso. Isso pode te ajudar se voce estiver sem dinheiro.</li>
+        <li>Você pode comprar dicas para ajudar a adivinhar o ano.</li>
+      </ul>
+      <h3>Custos</h3>
+      <ul>
+        <li><strong>Custo para Avançar de Fase:</strong> R$ 50</li>
+        <li><strong>Custo por Erro:</strong> R$ 50</li>
+        <li><strong>Custo por Dica:</strong>R$ 30</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <script src="index.js"></script>
 </body>
 </html>

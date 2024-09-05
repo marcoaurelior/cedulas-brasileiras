@@ -228,16 +228,36 @@ document.addEventListener('DOMContentLoaded', () => {
     let mostrandoFrente = true;
     let pontos = 0;
     let pontosPorCedula = 0; // Variável para controlar a pontuação gerada por clique para a cédula atual
-    const maxPontosPorCedula = 100; // Limite de 50 pontos por cédula
+    const maxPontosPorCedula = 150; // Limite de 50 pontos por cédula
     const custoRodada = 0;
     const custoRodadaErro = 50;
     const custoRodadaCarregar = 50;
     const custoDica = 30;
     const custoDicaImg = document.getElementById('custo-dica-img');
     const dicaElement = document.getElementById('dica');
+    const modal = document.getElementById('modal');
+    const openModalBtn = document.getElementById('open-modal');
+    const closeModalBtn = document.querySelector('.close');
 
 // Inicialmente oculta a dica
     dicaElement.style.display = 'none';
+
+    // Função para abrir o modal
+    openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+// Função para fechar o modal
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+// Fechar o modal ao clicar fora da área do modal
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 
     function embaralharCedulas() {
         const array = [...cedulas];
@@ -293,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dica = document.getElementById('dica');
             if (dica.style.display === 'none' || dica.style.display === '') {
                 const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
-                const intervalo = 20; // Intervalo de 20 anos
+                const intervalo = 60; // Intervalo de 20 anos
 
                 const anoInicio = Math.max(1900, anoCorreto - intervalo);
                 const anoFim = Math.min(2024, anoCorreto + intervalo);
@@ -331,17 +351,17 @@ document.addEventListener('DOMContentLoaded', () => {
         let mensagem = '';
 
         if (diferenca === 0) {
-            pontosAdicionais = 150; // Pontuação máxima para resposta exata
-            mensagem = `Parabéns! Você acertou! 🎉 Ganhou 150 pontos por isso!`;
-        } else if (diferenca <= 5) {
-            pontosAdicionais = 50; // Pontuação alta para diferença de até 5 anos
-            mensagem = `Quase lá! 😅 Você estava muito perto e ganhou 50 pontos por isso!`;
-        } else if (diferenca <= 10) {
-            pontosAdicionais = 25; // Pontuação moderada para diferença de até 10 anos
-            mensagem = `Boa tentativa! 👍 Você estava a uma pequena distância, mas ainda ganhou 25 pontos por isso!`;
+            pontosAdicionais = 200; // Pontuação máxima para resposta exata
+            mensagem = `Parabéns! Você acertou! 🎉 Ganhou R$ 200  por isso!`;
+        } else if (diferenca <= 7) {
+            pontosAdicionais = 100; // Pontuação alta para diferença de até 5 anos
+            mensagem = `Quase lá! 😅 Você estava muito perto e ganhou R$ 100 por isso!`;
+        } else if (diferenca <= 15) {
+            pontosAdicionais = 50; // Pontuação moderada para diferença de até 10 anos
+            mensagem = `Boa tentativa! 👍 Você estava a uma pequena distância, mas ainda ganhou R$ 50 por isso!`;
         } else {
             pontos -= custoRodadaErro; // Penalidade por erro
-            mensagem = `Errado! A cédula é de ${anoCorreto}. Você perdeu ${custoRodadaErro} pontos. Clique na cédula para conseguir mais.`;
+            mensagem = `Não chegou nem perto! A cédula é de ${anoCorreto}. Você perdeu R$ ${custoRodadaErro}.`;
         }
 
         // Atualiza a pontuação com base na proximidade
@@ -380,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (pontos < pontosNecessarios) {
             const pontosFaltando = pontosNecessarios - pontos;
-            mensagemElement.textContent = `Sua pontuação está abaixo de ${pontosNecessarios}. Você precisa de mais ${pontosFaltando} pontos para avançar para a próxima fase.`;
+            mensagemElement.textContent = `Você tem pouco dinheiro. Clique na cédula para conseguir mais. Você precisa de mais R$ ${pontosFaltando} para avançar para a próxima fase.`;
             mensagemElement.style.color = 'red'; // Ajusta a cor conforme necessário
             mensagemElement.classList.add('pulando');
 
@@ -422,11 +442,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 pontosPorCedula += pontosParaAdicionar; // Atualiza os pontos gerados por clique para essa cédula
                 atualizarPontuacao();
             } else {
-                document.getElementById('mensagem').textContent = 'Você já atingiu o limite de 50 pontos para esta cédula.';
+                document.getElementById('mensagem').textContent = 'Você já atingiu o limite de R$ 50 para esta cédula.';
                 document.getElementById('mensagem').style.color = 'orange';
             }
         } else {
-            document.getElementById('mensagem').textContent = 'Você já tem 50 ou mais pontos e não pode ganhar mais.';
+            document.getElementById('mensagem').textContent = 'Você já tem muito dinheiro para conseguir mais de forma fácil.';
             document.getElementById('mensagem').style.color = 'orange';
         }
     }
