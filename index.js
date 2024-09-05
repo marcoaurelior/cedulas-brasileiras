@@ -380,13 +380,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let mensagem = '';
 
         if (diferenca === 0) {
-            pontosAdicionais = 200; // Pontuação máxima para resposta exata
-            mensagem = `Parabéns! Você acertou! 🎉 Ganhou R$ 200  por isso!`;
-        } else if (diferenca <= 7) {
-            pontosAdicionais = 100; // Pontuação alta para diferença de até 5 anos
-            mensagem = `Quase lá! 😅 Você estava muito perto e ganhou R$ 100 por isso!`;
-        } else if (diferenca <= 15) {
-            pontosAdicionais = 50; // Pontuação moderada para diferença de até 10 anos
+            pontosAdicionais = 150; // Pontuação máxima para resposta exata
+            mensagem = `Parabéns! Você acertou! 🎉 Ganhou R$ 150  por isso!`;
+        } else if (diferenca <= 6) {
+            pontosAdicionais = 50; // Pontuação alta para diferença de até 5 anos
+            mensagem = `Quase lá! 😅 Você estava muito perto e ganhou R$ 50 por isso!`;
+        } else if (diferenca <= 10) {
+            pontosAdicionais = 40; // Pontuação moderada para diferença de até 10 anos
             mensagem = `Boa tentativa! 👍 Você estava a uma pequena distância, mas ainda ganhou R$ 50 por isso!`;
         } else {
             pontos -= custoRodadaErro; // Penalidade por erro
