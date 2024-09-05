@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cedulas = [
         {
             frente: 'src/assets/cedulas/1real-1994-frente.jpg',
-            verso: 'src/cedulas/1real-1994-verso.jpg',
+            verso: 'src/assets/cedulas/1real-1994-verso.jpg',
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 1994-1997"
         },
         {
-            frente: 'src/assets/cedulas/1real-1994-frente.jpg-2.jpg',
+            frente: 'src/assets/cedulas/1real-1994-frente-2.jpg',
             verso: 'src/assets/cedulas/1real-1994-verso-2.jpg',
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 1994-1997"
@@ -223,10 +223,19 @@ document.addEventListener('DOMContentLoaded', () => {
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
         }
     ];
-
     let cedulasEmbaralhadas = [];
     let cedulaAtual = 0;
     let mostrandoFrente = true;
+    let pontos = 0; // Variável para armazenar a pontuação
+    const custoRodada = 0; // Custo de cada rodada, se a pessoa acertar
+    const custoRodadaErro = 50; // Custo de cada rodada, se a pessoa errar
+    const custoRodadaCarregar = 50; // Custo ao carregar uma nova cédula
+    const custoDica = 30; // Custo de 30 pontos para exibir a dica
+    const custoDicaImg = document.getElementById('custo-dica-img');
+    const dicaElement = document.getElementById('dica');
+
+// Inicialmente oculta a dica
+    dicaElement.style.display = 'none';
 
     function embaralharCedulas() {
         const array = [...cedulas];
@@ -242,34 +251,62 @@ document.addEventListener('DOMContentLoaded', () => {
             cedulasEmbaralhadas = embaralharCedulas();
         }
 
+        // Cobrar pontos ao carregar uma nova cédula
+        cobrarRodada(custoRodadaCarregar);
+
         const cedula = cedulasEmbaralhadas[cedulaAtual];
         document.getElementById('cedula-img').src = mostrandoFrente ? cedula.frente : cedula.verso;
         document.getElementById('cedula-img').style.display = 'block';
         document.getElementById('info-box').style.display = 'none'; // Esconde a caixa de informações
         document.getElementById('next-btn').style.display = 'none'; // Esconde o botão "Próxima" inicialmente
 
-        // Exibe novamente os elementos
-        document.getElementById('dica').style.display = 'block';
+        // Oculta a dica e outros elementos
+        document.getElementById('dica').style.display = 'none';
         document.getElementById('ano-input').style.display = 'block';
         document.getElementById('verificar-btn').style.display = 'block';
 
-        atualizarDica(cedula.ano);
+        // Limpa a mensagem ao carregar uma nova cédula
+        document.getElementById('mensagem').textContent = '';
+        document.getElementById('mensagem').style.color = '';
+        document.getElementById('mensagem').classList.remove('pulando');
     }
 
-    function atualizarDica(anoCorreto) {
-        const dica = document.getElementById('dica');
-        const intervalo = 6; // Intervalo de 6 anos
+    function cobrarPontosDica() {
+        if (pontos >= custoDica) {
+            pontos -= custoDica;
+            atualizarPontuacao();
+            return true; // Retorna verdadeiro se os pontos foram cobrados com sucesso
+        } else {
+            // Mensagem de erro se não tiver pontos suficientes
+            document.getElementById('mensagem').textContent = `Você está pobre para usar a dica. Consiga mais dinheiro!`;
+            document.getElementById('mensagem').style.color = 'red'; // Ajusta a cor conforme necessário
+            return false; // Retorna falso se não for possível cobrar os pontos
+        }
+    }
 
-        // Gera um ponto aleatório dentro do intervalo permitido para o início do período
-        const anoInicio = Math.max(1900, anoCorreto - intervalo);
-        const anoFim = Math.min(2024, anoCorreto + intervalo);
+    function mostrarDica() {
+        if (cobrarPontosDica()) {
+            const dica = document.getElementById('dica');
+            if (dica.style.display === 'none' || dica.style.display === '') {
+                const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
+                const intervalo = 20; // Intervalo de 20 anos
 
-        // Escolhe aleatoriamente o início do período
-        const inicioDica = Math.floor(Math.random() * (anoFim - anoInicio - intervalo + 1)) + anoInicio;
-        const fimDica = inicioDica + intervalo;
+                const anoInicio = Math.max(1900, anoCorreto - intervalo);
+                const anoFim = Math.min(2024, anoCorreto + intervalo);
 
-        // Formata a dica
-        dica.textContent = `Dica: Entre ${inicioDica} e ${fimDica}`;
+                const inicioDica = Math.floor(Math.random() * (anoFim - anoInicio - intervalo + 1)) + anoInicio;
+                const fimDica = inicioDica + intervalo;
+
+                dica.textContent = `Dica: Entre ${inicioDica} e ${fimDica}`;
+                dica.style.display = 'block';
+            } else {
+                dica.style.display = 'none';
+            }
+        }
+    }
+
+    function atualizarPontuacao() {
+        document.getElementById('pontos').textContent = pontos;
     }
 
     function verificarResposta() {
@@ -277,26 +314,80 @@ document.addEventListener('DOMContentLoaded', () => {
         const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
 
         if (isNaN(anoEscolhido)) {
-            alert('Por favor, insira um ano válido.');
+            document.getElementById('mensagem').textContent = 'Por favor, insira um ano válido.';
+            document.getElementById('mensagem').style.color = 'red'; // Ajusta a cor conforme a mensagem
             return;
         }
 
-        const mensagem = anoEscolhido === anoCorreto
-            ? `Correto! A cédula é de ${anoCorreto}.`
-            : `Errado! A cédula é de ${anoCorreto}.`;
+        // Calcula a diferença absoluta entre o ano escolhido e o ano correto
+        const diferenca = Math.abs(anoEscolhido - anoCorreto);
+
+        // Calcula a pontuação com base na proximidade
+        let pontosAdicionais = 0;
+        let mensagem = '';
+
+        if (diferenca === 0) {
+            pontosAdicionais = 150; // Pontuação máxima para resposta exata
+            mensagem = `Parabéns! Você acertou! 🎉 Ganhou 150 pontos por isso!`;
+        } else if (diferenca <= 5) {
+            pontosAdicionais = 50; // Pontuação alta para diferença de até 5 anos
+            mensagem = `Quase lá! 😅 Você estava muito perto e ganhou 50 pontos por isso!`;
+        } else if (diferenca <= 10) {
+            pontosAdicionais = 25; // Pontuação moderada para diferença de até 10 anos
+            mensagem = `Boa tentativa! 👍 Você estava a uma pequena distância, mas ainda ganhou 25 pontos por isso!`;
+        } else {
+            pontos -= custoRodadaErro; // Penalidade por erro
+            mensagem = `Errado! A cédula é de ${anoCorreto}. Você perdeu ${custoRodadaErro} pontos.`;
+        }
+
+        // Atualiza a pontuação com base na proximidade
+        if (pontosAdicionais > 0) {
+            pontos += pontosAdicionais;
+            // Subtrai o custo da rodada se a resposta estiver correta
+            pontos -= custoRodada;
+        }
+
+        pontos = Math.max(0, pontos); // Garante que a pontuação não fique abaixo de zero
+
+        atualizarPontuacao();
 
         document.getElementById('ano-input').value = '';
         document.getElementById('info-box').style.display = 'block'; // Exibe a caixa de informações
         document.getElementById('info-text').textContent = cedulasEmbaralhadas[cedulaAtual].info;
         document.getElementById('next-btn').style.display = 'block'; // Exibe o botão "Próxima"
-        document.getElementById('dica').style.display = 'none'; // Esconde a dica
         document.getElementById('ano-input').style.display = 'none'; // Esconde a caixa de texto
         document.getElementById('verificar-btn').style.display = 'none'; // Esconde o botão "Verificar"
 
-        alert(mensagem);
+        // Atualiza a mensagem
+        const mensagemElement = document.getElementById('mensagem');
+        mensagemElement.textContent = mensagem;
+        mensagemElement.style.color = pontosAdicionais > 0 ? 'green' : 'red'; // Ajusta a cor conforme a mensagem
+        mensagemElement.classList.add('pulando');
+
+        // Remove a classe após a animação ter terminado
+        setTimeout(() => {
+            mensagemElement.classList.remove('pulando');
+        }, 500); // Tempo de duração da animação
     }
 
     function mostrarProximaCedula() {
+        const pontosNecessarios = 50; // Pontos necessários para avançar para a próxima fase
+        const mensagemElement = document.getElementById('mensagem');
+
+        if (pontos < pontosNecessarios) {
+            const pontosFaltando = pontosNecessarios - pontos;
+            mensagemElement.textContent = `Sua pontuação está abaixo de ${pontosNecessarios}. Você precisa de mais ${pontosFaltando} pontos para avançar para a próxima fase.`;
+            mensagemElement.style.color = 'red'; // Ajusta a cor conforme necessário
+            mensagemElement.classList.add('pulando');
+
+            // Remove a classe após a animação ter terminado
+            setTimeout(() => {
+                mensagemElement.classList.remove('pulando');
+            }, 500); // Tempo de duração da animação
+
+            return;
+        }
+
         cedulaAtual = (cedulaAtual + 1) % cedulasEmbaralhadas.length;
         mostrandoFrente = true; // Reseta para mostrar a frente da próxima cédula
         carregarCedula();
@@ -307,10 +398,27 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cedula-img').src = mostrandoFrente ? cedulasEmbaralhadas[cedulaAtual].frente : cedulasEmbaralhadas[cedulaAtual].verso;
     }
 
+    function adicionarPontosPorClique() {
+        pontos += 5;
+        atualizarPontuacao();
+    }
+
+    function cobrarRodada(custo) {
+        if (pontos >= custo) {
+            pontos -= custo;
+        } else {
+            pontos = 0; // Se não tiver pontos suficientes, zera a pontuação
+        }
+        atualizarPontuacao();
+    }
+
+// Adiciona os eventos
     document.getElementById('verificar-btn').addEventListener('click', verificarResposta);
     document.getElementById('next-btn').addEventListener('click', mostrarProximaCedula);
     document.getElementById('cedula-img').addEventListener('click', alternarImagem);
+    document.getElementById('cedula-img').addEventListener('click', adicionarPontosPorClique);
+    custoDicaImg.addEventListener('click', mostrarDica);
 
-    // Inicializa o jogo
+// Inicializa o jogo
     carregarCedula();
 });

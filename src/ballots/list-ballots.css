@@ -142,19 +142,20 @@ main {
   overflow: hidden; /* Garante que o conteúdo não transborde o container */
 }
 
-.cedula:hover {
-  transform: scale(1.1); /* Amplia ainda mais o card ao passar o mouse */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra ainda mais intensa ao passar o mouse */
-  padding-bottom: 100px; /* Adiciona mais espaço na parte inferior para o texto */
-}
-
 .cedula img {
   max-width: 100%;
-  height: auto;
+  height: 100%; /* Ajusta a altura da imagem para ocupar 100% da altura do contêiner */
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço do contêiner */
   display: block;
   margin: 0 auto;
   border-radius: 4px; /* Arredondar as bordas das imagens */
   transition: transform 0.6s ease; /* Transição suave */
+}
+
+.cedula:hover {
+  transform: scale(1.1); /* Amplia ainda mais o card ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra ainda mais intensa ao passar o mouse */
+  padding-bottom: 100px; /* Adiciona mais espaço na parte inferior para o texto */
 }
 
 .cedula:hover img {
@@ -288,7 +289,6 @@ main {
   height: 50px; /* Altura da imagem */
 }
 
-/* Estilos para o título h1 */
 h1 {
   font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
   font-size: 3rem; /* Tamanho da fonte */

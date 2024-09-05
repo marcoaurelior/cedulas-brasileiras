@@ -6,6 +6,25 @@
   <title>Jogo de Cédulas</title>
   <link rel="stylesheet" href="index.css">
   <link rel="icon" href="icon-1real.png" type="image/png">
+  <style>
+    /* Adicione estilos para o contador de pontos aqui, se necessário */
+    #contador-pontos {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    /* Estilos para o ícone de custo da dica */
+    #custo-dica-img {
+      cursor: pointer;
+      width: 50px; /* Ajuste o tamanho conforme necessário */
+      height: 50px; /* Ajuste o tamanho conforme necessário */
+    }
+    #dica-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -18,14 +37,23 @@
   </nav>
 </header>
 <main>
+  <div id="mensagem"></div>
   <div id="game-container">
     <div id="info-text-small">Clique na cédula para alternar entre frente e verso.</div>
-    <img id="cedula-img" src="" alt="Imagem da cédula">
+    <div id="game-info">
+      <img id="cedula-img" src="" alt="Imagem da cédula">
+      <div id="contador-pontos">Pontuação: <span id="pontos">0</span></div>
+    </div>
     <div id="info-box" style="display: none;">
       <p id="info-text"></p>
     </div>
-    <div id="dica" class="dica"></div>
+    <div id="dica-container">
+      <img id="custo-dica-img" src="light.gif" alt="Custo da dica">
+      <span id="dica">Dica: Entre 1900 e 2000</span>
+    </div>
+
     <input type="number" id="ano-input" placeholder="Digite o ano">
+
     <div>
       <button id="verificar-btn">Verificar</button>
       <button id="next-btn">Próxima</button>

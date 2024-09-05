@@ -207,4 +207,29 @@ header h1 {
   transform: scale(1.02); /* Ajuste o valor para o nível de zoom desejado */
 }
 
+@keyframes pulinho {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#mensagem {
+  font-size: 16px;
+  font-weight: bold;
+  color: red; /* ou qualquer cor que você preferir */
+  margin: 10px;
+  transition: transform 0.2s ease; /* Suaviza o efeito */
+}
+
+#mensagem.pulando {
+  animation: pulinho 1.5s ease;
+}
+
+
 

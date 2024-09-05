@@ -190,111 +190,110 @@ document.addEventListener('DOMContentLoaded', () => {
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 200,00\nPeríodo de Circulação: 2020-Atualidade"
         },
         {
-            value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-rugbi.png',
-            ano: 2016,
-            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Olimpíadas - Rugby"
+            "value": 1,
+            "frente": "../assets/moedas/1real-olimpiadas-rugbi.png",
+            "verso": "../assets/moedas/1real-olimpiadas-2016-frente.png",
+            "ano": 2016,
+            "info": "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Olimpíadas - Rugby"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-futebol.png',
+            frente: '../assets/moedas/1real-olimpiadas-futebol.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Olimpíadas - Futebol"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-judo.png',
+            frente: '../assets/moedas/1real-olimpiadas-judo.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Olimpíadas - Judô"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-atletismo-paralimpico.png',
+            frente: '../assets/moedas/1real-olimpiadas-atletismo-paralimpico.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Paralimpíadas - Atletismo"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-boxe.png',
+            frente: '../assets/moedas/1real-olimpiadas-boxe.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Olimpíadas - Boxe"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-natacao-paralimpica.png',
+            frente: '../assets/moedas/1real-olimpiadas-natacao-paralimpica.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Paralimpíadas - Natação"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-volei.png',
+            frente: '../assets/moedas/1real-olimpiadas-volei.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Olimpíadas - Vôlei"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2014-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-golfe.png',
+            frente: '../assets/moedas/1real-olimpiadas-golfe.png',
+            verso: '../assets/moedas/1real-olimpiadas-2014-frente.png',
             ano: 2014,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2014-Atualidade\nTema: Olimpíadas - Golfe"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2015-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-vela.png',
+            frente: '../assets/moedas/1real-olimpiadas-vela.png',
+            verso: '../assets/moedas/1real-olimpiadas-2015-frente.png',
             ano: 2015,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2015-Atualidade\nTema: Olimpíadas - Vela"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-paracanoagem.png',
+            frente: '../assets/moedas/1real-olimpiadas-paracanoagem.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Paralimpíadas - Paracanoagem"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-mascote-vinicius.png',
+            frente: '../assets/moedas/1real-olimpiadas-mascote-vinicius.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Olimpíadas - Mascote Vinícius"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2016-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-mascote-paralimpico-tom.png',
+            frente: '../assets/moedas/1real-olimpiadas-mascote-paralimpico-tom.png',
+            verso: '../assets/moedas/1real-olimpiadas-2016-frente.png',
             ano: 2016,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2016-Atualidade\nTema: Paralimpíadas - Mascote Tom"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2014-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-natacao.png',
+            frente: '../assets/moedas/1real-olimpiadas-natacao.png',
+            verso: '../assets/moedas/1real-olimpiadas-2014-frente.png',
             ano: 2014,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2014-Atualidade\nTema: Olimpíadas - Natação"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2015-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-basquete.png',
+            frente: '../assets/moedas/1real-olimpiadas-basquete.png',
+            verso: '../assets/moedas/1real-olimpiadas-2015-frente.png',
             ano: 2015,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2015-Atualidade\nTema: Olimpíadas - Basquete"
         },
         {
             value: 1,
-            frente: '../assets/moedas/1real-olimpiadas-2014-frente.png',
-            verso: '../assets/moedas/1real-olimpiadas-paratriatlo.png',
+            frente: '../assets/moedas/1real-olimpiadas-paratriatlo.png',
+            verso: '../assets/moedas/1real-olimpiadas-2014-frente.png',
             ano: 2014,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1,00\nPeríodo de Circulação: 2014-Atualidade\nTema: Paralimpíadas - Paratriatlo"
         },
-
         {
             value: 1,
             frente: '../assets/moedas/1real-1994-frente.png',
@@ -464,11 +463,65 @@ document.addEventListener('DOMContentLoaded', () => {
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
         },
     ];
+
+    const cedulasCruzeiro = [
+        {
+            frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
+            verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
+        },
+        {
+            frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
+            verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
+            ano: 1994,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
+        },
+        {
+            frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
+            verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
+            ano: 1993,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+    ];
+
     const container = document.getElementById('cedulas-container');
     const valueInput = document.getElementById('value-input');
     const modal = document.getElementById('info-modal');
     const btn = document.getElementById('open-modal'); // Atualizado para usar o botão de abrir modal
     const span = document.getElementsByClassName('close')[0];
+
+    // Exemplo de dados das cédulas (substitua pelo seu próprio array de cédulas
 
     function renderCedulas(filteredCedulas) {
         container.innerHTML = ''; // Limpa o container antes de renderizar
