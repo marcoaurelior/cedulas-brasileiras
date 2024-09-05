@@ -221,8 +221,39 @@ document.addEventListener('DOMContentLoaded', () => {
             verso: 'src/assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
             ano: 1993,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
+        },
+        {
+            frente: 'src/assets/cedulas/500reis-1874-frente.jpg',
+            verso: 'src/assets/cedulas/500reis-1874-verso.jpg',
+            ano: 1874,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00\nPeríodo de Circulação: 1874"
+        },
+        {
+            frente: 'src/assets/cedulas/1000reis-1833-frente.jpg',
+            verso: 'src/assets/cedulas/1000reis-1833-verso.jpg',
+            ano: 1833,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00\nPeríodo de Circulação: 1833"
+        },
+        {
+            frente: 'src/assets/cedulas/1000reis-1879-frente.jpg',
+            verso: 'src/assets/cedulas/1000reis-1879-verso.jpg',
+            ano: 1879,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00\nPeríodo de Circulação: 1879"
+        },
+        {
+            frente: 'src/assets/cedulas/5000reis-1932-frente.jpg',
+            verso: 'src/assets/cedulas/5000reis-1932-verso.jpg',
+            ano: 1932,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00\nPeríodo de Circulação: 1932"
+        },
+        {
+            frente: 'src/assets/cedulas/10cruzeirosnovos-1967-frente-informacão.jpg',
+            verso: 'src/assets/cedulas/10cruzeirosnovos-1967-verso-informacão.jpg',
+            ano: 1967,
+            info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00\nPeríodo de Circulação: 1967-1975\nCarimbo de NCr$ 10,00 sob cédula de Cr$ 10000,00"
         }
     ];
+
     let cedulasEmbaralhadas = [];
     let cedulaAtual = 0;
     let mostrandoFrente = true;
@@ -313,9 +344,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const dica = document.getElementById('dica');
             if (dica.style.display === 'none' || dica.style.display === '') {
                 const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
-                const intervalo = 40; // Intervalo de 20 anos
+                const intervalo = 41; // Intervalo de 20 anos
 
-                const anoInicio = Math.max(1900, anoCorreto - intervalo);
+                const anoInicio = Math.max(1800, anoCorreto - intervalo);
                 const anoFim = Math.min(2024, anoCorreto + intervalo);
 
                 const inicioDica = Math.floor(Math.random() * (anoFim - anoInicio - intervalo + 1)) + anoInicio;
