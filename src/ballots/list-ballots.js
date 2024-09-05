@@ -550,17 +550,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Abre o modal ao clicar no botão
-    btn.onclick = function() {
+    btn.onclick = function () {
         modal.style.display = 'block';
     }
 
     // Fecha o modal ao clicar no botão de fechar
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = 'none';
     }
 
     // Fecha o modal se o usuário clicar fora do modal
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = 'none';
         }

@@ -1,408 +1,421 @@
 /* Estilos básicos para o jogo */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body::before {
-  content: ""; /* Necessário para criar um elemento com o pseudo-selector */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('wallpaperflare.com_wallpaper.jpg');
-  background-size: cover; /* Faz a imagem cobrir todo o fundo */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
-  opacity: 0.95; /* Ajuste a opacidade conforme necessário (0.0 a 1.0) */
-  z-index: -1; /* Coloca o overlay atrás do conteúdo */
+    content: ""; /* Necessário para criar um elemento com o pseudo-selector */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('src/gifsAndImages/wallpaperflare.com_wallpaper.jpg');
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    opacity: 0.95; /* Ajuste a opacidade conforme necessário (0.0 a 1.0) */
+    z-index: -1; /* Coloca o overlay atrás do conteúdo */
 }
 
 main, header, footer {
-  position: relative; /* Necessário para garantir que o conteúdo esteja sobre o overlay */
-  z-index: 1; /* Garante que o conteúdo esteja acima do overlay */
+    position: relative; /* Necessário para garantir que o conteúdo esteja sobre o overlay */
+    z-index: 1; /* Garante que o conteúdo esteja acima do overlay */
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }
 
 #game-container {
-  background-color: rgba(255, 248, 248, 0.9); /* Cor de fundo com mais opacidade */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
-  padding: 20px;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
+    background-color: rgba(255, 248, 248, 0.9); /* Cor de fundo com mais opacidade */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
 }
 
 
 #cedula-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer; /* Adiciona cursor pointer para a imagem */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Adiciona cursor pointer para a imagem */
 }
 
 #info-text-small {
-  font-size: 12px;
-  color: #555;
-  margin-bottom: 10px;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
 .dica {
-  margin-top: 15px;
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
 }
 
 input[type="number"] {
-  width: calc(100% - 22px); /* Ajuste para o padding do botão e a borda */
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  text-align: center; /* Centraliza o texto dentro da caixa de entrada */
+    width: calc(100% - 22px); /* Ajuste para o padding do botão e a borda */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center; /* Centraliza o texto dentro da caixa de entrada */
 }
 
 button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  margin: 10px auto; /* Margem automática nas laterais para centralizar */
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: block; /* Garante que o botão seja tratado como um bloco */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px auto; /* Margem automática nas laterais para centralizar */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Garante que o botão seja tratado como um bloco */
 }
 
 button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 button:active {
-  background-color: #004494;
-  transform: translateY(0);
+    background-color: #004494;
+    transform: translateY(0);
 }
 
 .selected {
-  background-color: #d4edda; /* Cor de fundo verde claro para seleção correta */
-  color: #155724; /* Cor do texto verde escuro */
+    background-color: #d4edda; /* Cor de fundo verde claro para seleção correta */
+    color: #155724; /* Cor do texto verde escuro */
 }
 
 .incorrect {
-  background-color: #f8d7da; /* Cor de fundo vermelho claro para seleção incorreta */
-  color: #721c24; /* Cor do texto vermelho escuro */
+    background-color: #f8d7da; /* Cor de fundo vermelho claro para seleção incorreta */
+    color: #721c24; /* Cor do texto vermelho escuro */
 }
 
 #next-btn {
-  display: none; /* Inicialmente escondido */
-  margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    margin-top: 20px;
 }
 
 .info-box {
-  display: none; /* Inicialmente escondido */
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-top: 20px;
+    display: none; /* Inicialmente escondido */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
 }
 
 #info-text {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #info-ok-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #info-ok-btn:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 #info-ok-btn:active {
-  background-color: #004494;
+    background-color: #004494;
 }
 
 @media (max-width: 768px) {
-  input[type="number"] {
-    font-size: 14px;
-  }
+    input[type="number"] {
+        font-size: 14px;
+    }
 
-  button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 
-  .dica {
-    font-size: 16px;
-  }
+    .dica {
+        font-size: 16px;
+    }
 }
 
 nav ul.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul.menu li {
-  display: inline;
-  margin-right: 20px;
+    display: inline;
+    margin-right: 20px;
 }
 
 nav ul.menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 700; /* Fonte mais grossa */
-  transition: transform 0.3s ease, font-size 0.3s ease; /* Transição suave */
+    color: white;
+    text-decoration: none;
+    font-weight: 700; /* Fonte mais grossa */
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Transição suave */
 }
 
 nav ul.menu li a:hover {
-  transform: scale(1.1); /* Aumenta o tamanho do texto */
-  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+    transform: scale(1.1); /* Aumenta o tamanho do texto */
+    font-size: 1.2em; /* Aumenta o tamanho da fonte */
 }
 
 
 nav ul.menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s ease, font-size 0.3s ease; /* Transição suave */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Transição suave */
 }
 
 nav ul.menu li a:hover {
-  transform: scale(1.1); /* Aumenta o tamanho do texto */
-  font-size: 1.2em; /* Aumenta o tamanho da fonte */
+    transform: scale(1.1); /* Aumenta o tamanho do texto */
+    font-size: 1.2em; /* Aumenta o tamanho da fonte */
 }
 
 /* Estilos adicionais para o header */
 header {
-  background-color: #444;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2em;
+    margin: 0;
+    font-size: 2em;
 }
 
 h1 {
-  font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
-  font-size: 3rem; /* Tamanho da fonte */
-  font-weight: bold; /* Peso da fonte para destaque */
-  color: #2c3e50; /* Cor escura para boa legibilidade */
-  text-align: center; /* Centraliza o texto */
-  text-transform: uppercase; /* Deixa o texto em maiúsculas */
-  letter-spacing: 1px; /* Espaçamento entre letras */
-  margin: 20px 0; /* Margem superior e inferior */
-  padding: 10px; /* Padding para adicionar espaço interno */
-  border-bottom: 2px solid #3498db; /* Linha de destaque abaixo do título */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do texto */
+    font-family: 'Roboto', sans-serif; /* Fonte limpa e moderna */
+    font-size: 3rem; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte para destaque */
+    color: #2c3e50; /* Cor escura para boa legibilidade */
+    text-align: center; /* Centraliza o texto */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    margin: 20px 0; /* Margem superior e inferior */
+    padding: 10px; /* Padding para adicionar espaço interno */
+    border-bottom: 0.5px solid #ffffff; /* Linha de destaque abaixo do título */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do texto */
 }
 
 
 /* Estilo para a imagem com efeito de zoom */
 #game-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza o conteúdo horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
 }
 
 #cedula-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer; /* Adiciona cursor pointer para a imagem */
-  transition: transform 0.3s ease; /* Suaviza a transição do zoom */
-  margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Adiciona cursor pointer para a imagem */
+    transition: transform 0.3s ease; /* Suaviza a transição do zoom */
+    margin-bottom: 20px; /* Adiciona margem inferior para espaçamento */
 }
 
 #cedula-img:hover {
-  transform: scale(1.02); /* Ajuste o valor para o nível de zoom desejado */
+    transform: scale(1.02); /* Ajuste o valor para o nível de zoom desejado */
 }
 
 @keyframes pulinho {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 #mensagem {
-  font-size: 16px;
-  font-weight: bold;
-  color: red; /* ou qualquer cor que você preferir */
-  margin-bottom: 30px;
-  margin-top: 0;
-  padding: 10px; /* Adiciona espaçamento interno */
-  transition: transform 0.2s ease; /* Suaviza o efeito */
+    font-size: 16px;
+    font-weight: bold;
+    color: red; /* ou qualquer cor que você preferir */
+    margin-bottom: 30px;
+    margin-top: 0;
+    padding: 10px; /* Adiciona espaçamento interno */
+    transition: transform 0.2s ease; /* Suaviza o efeito */
 }
 
 #mensagem.pulando {
-  animation: pulinho 1.5s ease;
+    animation: pulinho 1.5s ease;
 }
 
 .exclamation-gif {
-  width: 50px; /* Largura da imagem */
-  height: 50px; /* Altura da imagem */
+    width: 50px; /* Largura da imagem */
+    height: 50px; /* Altura da imagem */
 }
+
 /* Estilos para o modal */
 .modal {
-  display: none; /* Esconde o modal por padrão */
-  position: fixed; /* Fixa o modal na tela */
-  z-index: 1; /* Garante que o modal fique acima de outros elementos */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
-  overflow: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Fixa o modal na tela */
+    z-index: 1; /* Garante que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+    overflow: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
 }
 
 /* Estilos para o conteúdo do modal */
 .modal-content {
-  background-image: url('background-brazil-p.jpg'); /* Imagem de fundo do modal */
-  background-size: cover; /* Faz a imagem cobrir todo o modal */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
-  color: #fff; /* Cor do texto padrão do modal */
-  margin: 5% auto; /* Centraliza o modal verticalmente e horizontalmente */
-  width: 40%; /* Ajuste a largura do modal conforme necessário */
-  height: auto; /* Ajusta a altura do modal para o tamanho do conteúdo */
-  max-height: 80%; /* Define a altura máxima para evitar que o modal fique muito grande */
-  position: relative; /* Necessário para o posicionamento do conteúdo */
-  border-radius: 15px; /* Define o raio da borda arredondada */
-  display: flex;
-  flex-direction: column; /* Organiza o conteúdo em coluna */
-  align-items: center; /* Centraliza horizontalmente */
-  padding: 20px; /* Adiciona padding para o conteúdo não ficar grudado nas bordas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra ao redor do modal */
+    background-image: url('background-brazil-p.jpg'); /* Imagem de fundo do modal */
+    background-size: cover; /* Faz a imagem cobrir todo o modal */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    color: #fff; /* Cor do texto padrão do modal */
+    margin: 5% auto; /* Centraliza o modal verticalmente e horizontalmente */
+    width: 40%; /* Ajuste a largura do modal conforme necessário */
+    height: auto; /* Ajusta a altura do modal para o tamanho do conteúdo */
+    max-height: 80%; /* Define a altura máxima para evitar que o modal fique muito grande */
+    position: relative; /* Necessário para o posicionamento do conteúdo */
+    border-radius: 15px; /* Define o raio da borda arredondada */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 20px; /* Adiciona padding para o conteúdo não ficar grudado nas bordas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra ao redor do modal */
 }
 
 /* Estilos para o botão de fechar */
 .close {
-  position: absolute; /* Posiciona o botão de fechamento fora do fluxo normal do layout */
-  top: 10px; /* Distância do topo */
-  right: 10px; /* Distância da direita */
-  color: #fff; /* Cor do texto do botão de fechamento */
-  font-size: 28px; /* Tamanho da fonte */
-  font-weight: bold; /* Peso da fonte */
-  cursor: pointer; /* Cursor de mão ao passar o mouse */
+    position: absolute; /* Posiciona o botão de fechamento fora do fluxo normal do layout */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    color: #fff; /* Cor do texto do botão de fechamento */
+    font-size: 28px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
 }
 
 /* Estilos para o título do modal */
 .modal-title {
-  text-align: center;
-  margin: 0 0 20px 0; /* Remove a margem superior e adiciona margem inferior */
-  padding: 0; /* Remove o padding padrão */
-  color: #fff; /* Cor do título branco para contraste */
-  font-size: 24px; /* Tamanho da fonte do título */
+    text-align: center;
+    margin: 0 0 20px 0; /* Remove a margem superior e adiciona margem inferior */
+    padding: 0; /* Remove o padding padrão */
+    color: #fff; /* Cor do título branco para contraste */
+    font-size: 24px; /* Tamanho da fonte do título */
 }
 
 /* Estilos para o texto dentro do modal */
 .modal-text {
-  background: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
-  padding: 20px; /* Padding interno para o texto */
-  border-radius: 10px; /* Borda arredondada para a caixa de texto */
-  width: 100%; /* Largura ajustada para ocupar todo o modal-content */
-  max-width: 600px; /* Largura máxima da caixa de texto */
-  box-sizing: border-box; /* Inclui padding e border no tamanho total */
-  text-align: justify; /* Justifica o texto */
-  color: #000; /* Cor do texto preto */
-  font-size: 18px; /* Tamanho da fonte do texto */
-  line-height: 1.6; /* Altura da linha para melhor legibilidade */
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
+    padding: 20px; /* Padding interno para o texto */
+    border-radius: 10px; /* Borda arredondada para a caixa de texto */
+    width: 100%; /* Largura ajustada para ocupar todo o modal-content */
+    max-width: 600px; /* Largura máxima da caixa de texto */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    text-align: justify; /* Justifica o texto */
+    color: #000; /* Cor do texto preto */
+    font-size: 18px; /* Tamanho da fonte do texto */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
 }
 
 /* Estilos para hover e focus no botão de fechar */
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #contador-pontos {
-  font-size: 1.2em;
-  margin-top: 10px;
+    font-size: 1.2em;
+    margin-top: 10px;
 }
+
 /* Estilos para o ícone de custo da dica */
 #custo-dica-img {
-  cursor: pointer;
-  width: 50px; /* Ajuste o tamanho conforme necessário */
-  height: 50px; /* Ajuste o tamanho conforme necessário */
+    cursor: pointer;
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
 }
+
 #dica-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 #info-section {
-  position: absolute; /* Fixa o elemento na página */
-  top: 70px; /* Distância do topo da página */
-  right: 250px; /* Distância do lado direito da página */
-  z-index: 1000; /* Garante que o elemento fique sobre outros conteúdos */
+    position: absolute; /* Fixa o elemento na página */
+    top: 70px; /* Distância do topo da página */
+    right: 250px; /* Distância do lado direito da página */
+    z-index: 1000; /* Garante que o elemento fique sobre outros conteúdos */
 }
 
 /* Estilos gerais para os botões */
 button {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* Texto branco */
-  background-color: #007bff; /* Cor de fundo azul */
-  border: none;
-  border-radius: 5px; /* Bordas arredondadas */
-  padding: 10px 20px; /* Espaçamento interno */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
-  margin: 5px; /* Margem para separação */
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* Texto branco */
+    background-color: #007bff; /* Cor de fundo azul */
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+    margin: 5px; /* Margem para separação */
 }
 
 /* Estilo para o botão "Verificar" */
 #verificar-btn {
-  background-color: #28a745; /* Cor de fundo verde */
+    background-color: #28a745; /* Cor de fundo verde */
 }
 
 /* Estilo para o botão "Próxima" */
 #next-btn {
-  background-color: #17a2b8; /* Cor de fundo azul claro */
+    background-color: #17a2b8; /* Cor de fundo azul claro */
 }
 
 /* Efeito de hover para ambos os botões */
 button:hover {
-  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-  transform: scale(1.05); /* Leve aumento no tamanho */
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no tamanho */
 }
 
 /* Efeito de clique para ambos os botões */
 button:active {
-  background-color: #004085; /* Cor de fundo ao clicar */
-  transform: scale(0.95); /* Leve redução no tamanho */
+    background-color: #004085; /* Cor de fundo ao clicar */
+    transform: scale(0.95); /* Leve redução no tamanho */
+}
+
+footer {
+    padding: 10px;
+    background-color: #444;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    font-size: 10px;
+    position: fixed;
 }

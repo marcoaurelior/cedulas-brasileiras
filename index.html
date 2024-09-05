@@ -1,81 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz de Cédulas</title>
-  <link rel="icon" href="icon-1real.png" type="image/png">
-  <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Cédulas</title>
+    <link rel="icon" href="icon-1real.png" type="image/png">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <header>
-  <nav>
-    <ul class="menu">
-      <li><a href="index.html">Quiz de Conhecimento</a></li>
-      <li><a href="src/ballots/list-ballots.html">Lista de Cédulas</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Quiz de Conhecimento</a></li>
+            <li><a href="src/ballots/list-ballots.html">Lista de Cédulas</a></li>
+        </ul>
+    </nav>
 </header>
 
 <section id="info-section">
-  <div class="info-container">
-    <img src="exclamation-point-jumping.gif" alt="Exclamação" class="exclamation-gif" id="open-modal">
-  </div>
+    <div class="info-container">
+        <img src="src/gifsAndImages/exclamation-point-jumping.gif" alt="Exclamação" class="exclamation-gif" id="open-modal">
+    </div>
 </section>
 <h1>Acerte o Ano das Cedulas</h1>
 <main>
 
-  <div id="game-container">
-    <div id="mensagem"></div>
-    <div id="info-text-small">Clique na cédula para alternar entre frente e verso.</div>
-    <div id="game-info">
-      <img id="cedula-img" src="" alt="Imagem da cédula">
-      <div id="contador-pontos">Saldo: R$ <span id="pontos">0</span></div>
+    <div id="game-container">
+        <div id="mensagem"></div>
+        <div id="info-text-small">Clique na cédula para alternar entre frente e verso.</div>
+
+        <div id="game-info">
+            <img id="cedula-img" src="" alt="Imagem da cédula">
+            <div id="contador-pontos">Saldo: R$ <span id="pontos">0</span></div>
+        </div>
+        <div id="info-box" style="display: none;">
+            <p id="info-text"></p>
+        </div>
+        <div id="dica-container">
+            <img id="custo-dica-img" src="src/gifsAndImages/light.gif" alt="Custo da dica">
+            <span id="dica"></span>
+        </div>
+        <input type="number" id="ano-input" placeholder="Digite o ano...">
+        <div>
+            <button id="verificar-btn">Verificar</button>
+            <button id="next-btn">Próxima</button>
+        </div>
     </div>
-    <div id="info-box" style="display: none;">
-      <p id="info-text"></p>
-    </div>
-    <div id="dica-container">
-      <img id="custo-dica-img" src="light.gif" alt="Custo da dica">
-      <span id="dica"></span>
-    </div>
-    <input type="number" id="ano-input" placeholder="Digite o ano...">
-    <div>
-      <button id="verificar-btn">Verificar</button>
-      <button id="next-btn">Próxima</button>
-    </div>
-  </div>
 </main>
 
 <div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 class="modal-title">Informações sobre o Quiz</h2>
-    <div class="modal-text">
-      <p>
-        Este é um Quiz de identificação de cédulas. O objetivo é adivinhar o ano de fabricação da cédula exibida. Você pode
-        usar as dicas disponíveis para ajudar, mas isso possui um custo.
-      </p>
-      <h3>Informações do Quiz</h3>
-      <ul>
-        <li>Você ganha dinheiro com base na proximidade da sua resposta. Mas cuidado! Se errar, você perde dinheiro.</li>
-        <li>Clique na cédula para alternar entre a frente e o verso. Isso pode te ajudar se você estiver sem dinheiro.</li>
-        <li>Você pode comprar dicas para ajudar a acertar o ano.</li>
-      </ul>
-      <h3>Custos</h3>
-      <ul>
-        <li><strong>Para Avançar de Fase:</strong> R$ 50</li>
-        <li><strong>Por Erro:</strong> R$ 50</li>
-        <li><strong>Por Dica:</strong> R$ 30</li>
-      </ul>
-      <p>
-      <hr>
-      <strong>*</strong>Se você ficar sem dinheiro, clique na cédula algumas vezes que magicamente o seu problema será resolvido 😉
-      </p>
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal-title">Informações sobre o Quiz</h2>
+        <div class="modal-text">
+            <p>
+                Este é um Quiz de identificação de cédulas. O objetivo é adivinhar o ano de fabricação da cédula
+                exibida. Você pode
+                usar as dicas disponíveis para ajudar, mas isso possui um custo.
+            </p>
+            <h3>Informações do Quiz</h3>
+            <ul>
+                <li>Você ganha dinheiro com base na proximidade da sua resposta. Mas cuidado! Se errar, você perde
+                    dinheiro.
+                </li>
+                <li>Clique na cédula para alternar entre a frente e o verso. Isso pode te ajudar se você estiver sem
+                    dinheiro.
+                </li>
+                <li>Você pode comprar dicas para ajudar a acertar o ano.</li>
+            </ul>
+            <h3>Custos</h3>
+            <ul>
+                <li><strong>Para Avançar de Fase:</strong> R$ 50</li>
+                <li><strong>Por Erro:</strong> R$ 50</li>
+                <li><strong>Por Dica:</strong> R$ 30</li>
+            </ul>
+            <p>
+            <hr>
+            <strong>*</strong>Se você ficar sem dinheiro, clique na cédula algumas vezes que magicamente o seu problema
+            será resolvido 😉
+            </p>
+        </div>
     </div>
-  </div>
 </div>
 
+
+
+<footer>
+    <p>Desenvolvido por Marco Aurelio Ribeiro na Imersão Dev Alura + Google Gemini</p>
+</footer>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 <script src="index.js"></script>
 </body>
 </html>

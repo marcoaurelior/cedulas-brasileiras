@@ -64,7 +64,7 @@ main {
   justify-content: center; /* Centraliza verticalmente o conteúdo */
   align-items: center; /* Centraliza horizontalmente o conteúdo */
   text-align: center; /* Centraliza o texto dentro do elemento */
-  background-image: url('../../search-background.jpg'); /* Caminho para a imagem de fundo */
+  background-image: url('../gifsAndImages/search-background.jpg'); /* Caminho para a imagem de fundo */
   background-size: 100% 100%; /* Ajusta a imagem para 90% da largura e altura do elemento */
   background-position: center; /* Centraliza a imagem no fundo */
   background-repeat: no-repeat; /* Impede a repetição da imagem */
@@ -301,5 +301,15 @@ h1 {
   padding: 10px; /* Padding para adicionar espaço interno */
   border-bottom: 2px solid #3498db; /* Linha de destaque abaixo do título */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do texto */
+}
+
+footer {
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  : 1px solid #ddd;
+  font-size: 10px;
 }
 
