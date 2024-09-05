@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dica = document.getElementById('dica');
             if (dica.style.display === 'none' || dica.style.display === '') {
                 const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
-                const intervalo = 60; // Intervalo de 20 anos
+                const intervalo = 40; // Intervalo de 20 anos
 
                 const anoInicio = Math.max(1900, anoCorreto - intervalo);
                 const anoFim = Math.min(2024, anoCorreto + intervalo);
