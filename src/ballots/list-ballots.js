@@ -414,78 +414,91 @@ document.addEventListener('DOMContentLoaded', () => {
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 0,50\nPeríodo de Circulação: 2019-Atualidade"
         },
         {
+            value: 5000,
             frente: '../assets/cedulas/5000reis-1932-frente.jpg',
             verso: '../assets/cedulas/5000reis-1932-verso.jpg',
             ano: 1932,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00\nPeríodo de Circulação: 1932"
         },
         {
+            value: 1000,
             frente: '../assets/cedulas/1000reis-1833-frente.jpg',
             verso: '../assets/cedulas/1000reis-1833-verso.jpg',
             ano: 1833,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00\nPeríodo de Circulação: 1833"
         },
         {
+            value: 500,
             frente: '../assets/cedulas/500reis-1874-frente.jpg',
             verso: '../assets/cedulas/500reis-1874-verso.jpg',
             ano: 1874,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00\nPeríodo de Circulação: 1874"
         },
         {
+            value: 1000,
             frente: '../assets/cedulas/1000reis-1879-frente.jpg',
             verso: '../assets/cedulas/1000reis-1879-verso.jpg',
             ano: 1879,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00\nPeríodo de Circulação: 1879"
         },
         {
+            value: 10,
             frente: '../assets/cedulas/10cruzeirosnovos-1967-frente-informacão.jpg',
             verso: '../assets/cedulas/10cruzeirosnovos-1967-verso-informacão.jpg',
             ano: 1967,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00\nPeríodo de Circulação: 1967-1975\nCarimbo de NCr$ 10,00 sob cédula de Cr$ 10000,00"
         },
         {
+            value: 500,
             frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
             verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
             ano: 1993,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
         },
         {
+            value: 50000,
             frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
             verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
         },
         {
+            value: 100,
             frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
             verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
             ano: 1993,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
         },
         {
+            value: 500,
             frente: '../assets/cedulas/500cruzeiros-reais-1993-frente.jpg',
             verso: '../assets/cedulas/500cruzeiros-reais-1993-verso.jpg',
             ano: 1993,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 500,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
         },
         {
+            value: 5000,
             frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
             verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
             ano: 1993,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
         },
         {
+            value: 50000,
             frente: '../assets/cedulas/50000cruzeiros-reais-1994-frente.jpg',
             verso: '../assets/cedulas/50000cruzeiros-reais-1994-verso.jpg',
             ano: 1994,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 50.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1994"
         },
         {
+            value: 1000,
             frente: '../assets/cedulas/1000cruzeiros-reais-1993-frente.jpg',
             verso: '../assets/cedulas/1000cruzeiros-reais-1993-verso.jpg',
             ano: 1993,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 1.000,00 (Cruzeiros Reais)\nPeríodo de Circulação: 1993"
         },
         {
+            value: 5000,
             frente: '../assets/cedulas/5000cruzeiros-reais-1993-frente.jpg',
             verso: '../assets/cedulas/5000cruzeiros-reais-1993-verso.jpg',
             ano: 1993,

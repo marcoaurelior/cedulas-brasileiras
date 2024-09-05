@@ -214,7 +214,7 @@ main {
 
 /* Estilos para o conteúdo do modal */
 .modal-content {
-  background-image: url('../../background-brazil-p.jpg'); /* Imagem de fundo do modal */
+  background-image: url('../gifsAndImages/background-brazil-p.jpg'); /* Imagem de fundo do modal */
   background-size: cover; /* Faz a imagem cobrir todo o modal */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
@@ -313,4 +313,3 @@ footer {
   font-size: 10px;
   color: #ffffff;
 }
-
