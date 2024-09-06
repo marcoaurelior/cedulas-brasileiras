@@ -443,8 +443,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             value: 10,
-            frente: '../assets/cedulas/10cruzeirosnovos-1967-frente-informacão.jpg',
-            verso: '../assets/cedulas/10cruzeirosnovos-1967-verso-informacão.jpg',
+            frente: '../assets/cedulas/10cruzeirosnovos-1967-frente-informacao.jpg',
+            verso: '../assets/cedulas/10cruzeirosnovos-1967-verso-informacao.jpg',
             ano: 1967,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00\nPeríodo de Circulação: 1967-1975\nCarimbo de NCr$ 10,00 sob cédula de Cr$ 10000,00"
         },

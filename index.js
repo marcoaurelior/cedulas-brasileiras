@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00\nPeríodo de Circulação: 1932"
         },
         {
-            frente: 'src/assets/cedulas/10cruzeirosnovos-1967-frente-informacão.jpg',
+            frente: 'src/assets/cedulas/10cruzeirosnovos-1967-frente-informacao.jpg',
             verso: 'src/assets/cedulas/10cruzeirosnovos-1967-verso-informacão.jpg',
             ano: 1967,
             info: "Fabricante: Casa da Moeda do Brasil\nValor: R$ 5.000,00\nPeríodo de Circulação: 1967-1975\nCarimbo de NCr$ 10,00 sob cédula de Cr$ 10000,00"
@@ -382,15 +382,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (diferenca === 0) {
             pontosAdicionais = 150; // Pontuação máxima para resposta exata
             mensagem = `Parabéns! Você acertou! 🎉 Ganhou R$ 150  por isso!`;
-        } else if (diferenca <= 6) {
+        } else if (diferenca <= 8) {
             pontosAdicionais = 50; // Pontuação alta para diferença de até 5 anos
-            mensagem = `Quase lá! 😅 Você estava muito perto e ganhou R$ 50 por isso!`;
-        } else if (diferenca <= 10) {
-            pontosAdicionais = 40; // Pontuação moderada para diferença de até 10 anos
-            mensagem = `Boa tentativa! 👍 Você estava a uma pequena distância, mas ainda ganhou R$ 50 por isso!`;
+            mensagem = `Boa tentativa! 😅 Você chegou muito perto e ganhou R$ 50 por isso!`;
+        } else if (diferenca <= 12) {
+            pontosAdicionais = 30; // Pontuação moderada para diferença de até 10 anos
+            mensagem = `Quase lá! 👍 Não tão longe. Não tão perto, mas ainda ganhou R$ 30 por isso!`;
         } else {
             pontos -= custoRodadaErro; // Penalidade por erro
-            mensagem = `Não chegou nem perto! A cédula é de ${anoCorreto}. Você perdeu R$ ${custoRodadaErro}.`;
+            mensagem = `Essa foi longe! A cédula é de ${anoCorreto}. Você perdeu R$ ${custoRodadaErro}.`;
         }
 
         // Atualiza a pontuação com base na proximidade
