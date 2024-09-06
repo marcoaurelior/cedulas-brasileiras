@@ -127,7 +127,7 @@ main {
 
 .cedula {
   display: inline-block;
-  width: 29.5%;
+  width: 26.8%;
   margin: 20px; /* Aumenta a margem entre os cards */
   border: 2px solid #a6a6a6; /* Borda preta mais espessa */
   padding: 10px;
@@ -146,7 +146,7 @@ main {
   max-width: 100%;
   height: 100%; /* Ajusta a altura da imagem para ocupar 100% da altura do contêiner */
   object-fit: cover; /* Garante que a imagem cubra todo o espaço do contêiner */
-  display: block;
+  /*display: block;*/
   margin: 0 auto;
   border-radius: 4px; /* Arredondar as bordas das imagens */
   transition: transform 0.6s ease; /* Transição suave */
@@ -321,4 +321,8 @@ footer {
   background-size: 20px;
   background-position: right 10px center;
   background-repeat: no-repeat;
+}
+
+#cedulas-container {
+  text-align: center;
 }
