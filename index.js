@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cobrarPontosDica()) {
             const dica = document.getElementById('dica');
             const anoCorreto = cedulasEmbaralhadas[cedulaAtual].ano;
-            const intervalo = 41; // Intervalo de 20 anos
+            const intervalo = 41; // Intervalo de 21 anos
 
             const anoInicio = Math.max(1800, anoCorreto - intervalo);
             const anoFim = Math.min(2024, anoCorreto + intervalo);
@@ -353,8 +353,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             dica.textContent = `Dica: Entre ${inicioDica} e ${fimDica}`;
             dica.style.display = 'block'; // Garante que a dica esteja visível
-
-            // Se a dica já estiver visível, você pode querer limpar a dica anterior ou fazer outras atualizações
         }
     }
 

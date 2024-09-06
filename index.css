@@ -313,8 +313,10 @@ h1 {
     display: flex;
     flex-direction: column; /* Organiza o conteúdo em coluna */
     align-items: center; /* Centraliza horizontalmente */
-    padding: 20px; /* Adiciona padding para o conteúdo não ficar grudado nas bordas */
+    padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra ao redor do modal */
+    overflow: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
+
 }
 
 /* Estilos para o botão de fechar */
