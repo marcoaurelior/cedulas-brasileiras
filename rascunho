@@ -1,0 +1,74 @@
+openEditPaymentModal(modal, paymentId: string) {
+        this.editPaymentId = paymentId;
+
+        const usersReq = this.usersService.getUsers(0, 'ALL', 1000);
+        const plansReq = this.planService.getPlans(0, 'ALL', 1000);
+        const serviceTypesReq = this.serviceTypesService.getServiceTypes(0, 'ALL', 1000);
+
+        forkJoin([usersReq, plansReq, serviceTypesReq]).subscribe(response => {
+            const usersResponse = response[0];
+            const plansResponse = response[1].content;
+            const serviceTypesResponse = response[2];
+
+            this.serviceTypes = serviceTypesResponse;
+            this.activeServiceTypes = this.serviceTypes.content.filter((serviceType) => serviceType.active);
+
+            this.trainers = usersResponse;
+            this.activeTrainers = this.trainers.content.filter((trainer) => trainer.active);
+
+            this.plans = plansResponse.map((plan) => {
+                return {
+                    name: plan?.name + ' - ' + utilsBr.numberToCurrency(plan?.price) + (plan?.active === true ? '' : '  (Inativo)'),
+                    id: plan?.id,
+                    price: plan?.price,
+                    customers: plan?.customers,
+                    scheduleRecurrenceType: plan?.scheduleRecurrenceType,
+                    scheduleLimit: plan?.scheduleLimit,
+                    monthlyReScheduleLimit: plan?.monthlyReScheduleLimit,
+                    daysToReSchedule: plan?.daysToReSchedule,
+                    active: plan?.active
+                };
+            });
+            this.activePlans = this.plans.filter((plan) => plan.active);
+
+            const currentPlanId = this.customer.planId;
+            const currentPlan = this.plans.find(plan => plan.id === currentPlanId);
+
+            this.planOptions = [...this.activePlans];
+            if (currentPlan && !currentPlan.active) {
+                this.planOptions.push(currentPlan);
+            }
+            this.service.getPaymentById(paymentId).subscribe((payment) => {
+                this.editPaymentDate = this.formatDate(payment.date);
+                this.editPaymentAmount = this.formatCurrency(payment.amount);
+                this.editPaymentMethodId = payment.paymentMethodId;
+                this.editPaymentOtherInfo = payment.otherInfo;
+                this.editPaymentTrainer = payment.userId;
+                this.editPaymentPlanId = payment.planId;
+                this.editPaymentServiceType = payment.serviceTypeId;
+                this.editPaymentCustomerName = payment.customerName;
+
+                this.editPaymentPlan = this.plans.find((plan) => plan.id === payment?.planId);
+                this.editPaymentPlanName = payment?.planName;
+                this.isEditPaymentPlanActive = this.editPaymentPlan?.active;
+                this.updatePlanOptions();
+
+                this.editPaymentTrainerName = payment?.userName;
+                this.isEditPaymentTrainerActive = this.trainers.content.find((trainer) => trainer.id === payment?.userId)?.active;
+                this.updateTrainerOptions();
+
+                this.editPaymentServiceTypeName = payment?.serviceType;
+                this.isEditServiceTypeActive = this.serviceTypes.content.find((serviceType) => serviceType.id === payment?.serviceTypeId)?.active;
+                this.updateServiceTypeOptions();
+
+                this.openEditModal(modal);
+
+            },error => {
+                console.error(error);
+                this.notificationService.showNotification('danger', 'Erro', 'Não foi possível recuperar os dados de pagamento, tente mais tarde!');
+            })
+        }, error => {
+            console.error(error);
+            this.notificationService.showNotification('danger', 'Erro', 'Não foi possível recuperar os dados de pagamento, tente mais tarde!');
+        });
+    }
